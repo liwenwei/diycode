@@ -12,7 +12,7 @@ import java.util.UUID;
 public class CrimeLab {
     private static CrimeLab sCrimeLab;
 
-    private HashMap<UUID, Crime> mCrimes;
+    private List<Crime> mCrimes;
 
     public static CrimeLab get(Context context) {
         if (sCrimeLab == null) {
@@ -22,22 +22,24 @@ public class CrimeLab {
     }
 
     private CrimeLab(Context context) {
-        mCrimes = new HashMap<>();
+        mCrimes = new ArrayList<>();
+    }
 
-        for (int i = 0; i < 100; i++) {
-            Crime crime = new Crime();
-            crime.setTitle("Crime #" + i);
-            crime.setSolved(i % 2 == 0); // Every other one
-            mCrimes.put(crime.getId(), crime);
-        }
+    public void addCrime(Crime crime) {
+        mCrimes.add(crime);
     }
 
     public List<Crime> getCrimes() {
-        return new ArrayList<>(mCrimes.values());
+        return mCrimes;
     }
 
     public Crime getCrime(UUID id) {
-        return mCrimes.get(id);
+        for (Crime crime : mCrimes) {
+            if (crime.getId().equals(id)) {
+                return crime;
+            }
+        }
+        return null;
     }
 
 }
