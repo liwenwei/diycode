@@ -11,12 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
-import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 public class CrimeListFragment extends Fragment {
@@ -98,7 +93,7 @@ public class CrimeListFragment extends Fragment {
         public void onClick(View view) {
             mSelectedIndex = this.getAdapterPosition();
 
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
             startActivity(intent);
         }
     }
