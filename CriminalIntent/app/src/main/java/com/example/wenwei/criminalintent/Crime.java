@@ -3,10 +3,6 @@ package com.example.wenwei.criminalintent;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Created by v-wenwli on 10/16/2017.
- */
-
 public class Crime {
 
     private UUID mId;
@@ -15,7 +11,11 @@ public class Crime {
     private boolean mSolved;
 
     public Crime() {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Crime(UUID id) {
+        mId = id;
         mDate = new Date();
     }
 

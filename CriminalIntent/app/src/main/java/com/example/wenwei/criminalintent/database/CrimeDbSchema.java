@@ -1,4 +1,4 @@
-package com.example.wenwei.criminalintent;
+package com.example.wenwei.criminalintent.database;
 
 
 public class CrimeDbSchema {
