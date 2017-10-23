@@ -2,6 +2,7 @@ package com.example.wenwei.criminalintent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
@@ -127,6 +128,11 @@ public class CrimeFragment extends Fragment {
             mSuspectButton.setText(mCrime.getSuspect());
         }
 
+        PackageManager packageManager = getActivity().getPackageManager();
+        if (packageManager.resolveActivity(pickContact, PackageManager.MATCH_DEFAULT_ONLY) ==null) {
+            mSuspectButton.setEnabled(false);
+        }
+
         return v;
     }
 
@@ -189,7 +195,7 @@ public class CrimeFragment extends Fragment {
         if (suspect == null) {
             suspect = getString(R.string.crime_report_no_suspect);
         } else {
-            suspect = getString(R.string.crime_report_suspect);
+            suspect = getString(R.string.crime_report_suspect, suspect);
         }
 
         String report = getString(R.string.crime_report,
