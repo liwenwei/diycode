@@ -10,6 +10,7 @@ import com.example.wenwei.criminalintent.database.CrimeBaseHelper;
 import com.example.wenwei.criminalintent.database.CrimeCursorWrapper;
 import com.example.wenwei.criminalintent.database.CrimeDbSchema.CrimeTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -68,6 +69,11 @@ public class CrimeLab {
         } finally {
             cursor.close();
         }
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFilename());
     }
 
     public void updateCrime(Crime crime) {
