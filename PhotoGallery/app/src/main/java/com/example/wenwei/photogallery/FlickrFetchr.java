@@ -112,6 +112,7 @@ public class FlickrFetchr {
             GalleryItem item = new GalleryItem();
             item.setId(object.getString("id"));
             item.setCaption(object.getString("title"));
+            item.setOwner(object.getString("owner"));
 
             if (!object.has("url_s")) {
                 continue;
