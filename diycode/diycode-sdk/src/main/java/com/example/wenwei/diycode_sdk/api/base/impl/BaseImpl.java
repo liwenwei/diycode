@@ -1,6 +1,9 @@
 package com.example.wenwei.diycode_sdk.api.base.impl;
 
 
+import android.content.Context;
+import android.support.annotation.NonNull;
+
 import com.example.wenwei.diycode_sdk.api.base.bean.OAuth;
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
 import com.example.wenwei.diycode_sdk.log.Logger;
@@ -34,6 +37,12 @@ public class BaseImpl<Service> {
     protected CacheUtil mCacheUtil;
     protected static Retrofit mRetrofit;
     protected Service mService;
+
+    public BaseImpl(@NonNull Context context) {
+        mCacheUtil = new CacheUtil(context.getApplicationContext());
+        initRetrofit();
+        this.mService = mRetrofit.create(getServiceClass());
+    }
 
     private Class<Service> getServiceClass() {
         return (Class<Service>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];

@@ -20,13 +20,13 @@
  * Weibo:   http://weibo.com/GcsSloop
  */
 
-package com.example.wenwei.diycode_sdk.api.api.news.event;
+package com.example.wenwei.diycode_sdk.api.news.event;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.wenwei.diycode_sdk.api.api.base.bean.Node;
-import com.example.wenwei.diycode_sdk.api.api.base.event.BaseEvent;
+import com.example.wenwei.diycode_sdk.api.base.bean.Node;
+import com.example.wenwei.diycode_sdk.api.base.event.BaseEvent;
 
 import java.util.List;
 
