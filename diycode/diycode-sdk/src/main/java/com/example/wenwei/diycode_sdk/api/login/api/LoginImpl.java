@@ -1,5 +1,6 @@
 package com.example.wenwei.diycode_sdk.api.login.api;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.example.wenwei.diycode_sdk.api.base.bean.OAuth;
@@ -16,6 +17,10 @@ import retrofit2.Call;
 
 
 public class LoginImpl extends BaseImpl<LoginService> implements LoginAPI {
+
+    public LoginImpl(@NonNull Context context) {
+        super(context);
+    }
 
     /**
      * 登录时调用

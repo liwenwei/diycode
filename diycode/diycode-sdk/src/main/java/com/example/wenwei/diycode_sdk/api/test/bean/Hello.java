@@ -20,18 +20,19 @@
  * Weibo:   http://weibo.com/GcsSloop
  */
 
-package com.example.wenwei.diycode_sdk.api.user.bean;
+package com.example.wenwei.diycode_sdk.api.test.bean;
 
 import java.io.Serializable;
 
 /**
- * 用户信息
+ * 测试(测试 token 是否管用)
  */
-public class User implements Serializable{
-    private int id;             // 唯一 id
-    private String login;       // 登录用户名
-    private String name;        // 昵称
-    private String avatar_url;  // 头像链接
+public class Hello implements Serializable {
+
+    private int id;             // 当前用户唯一 id
+    private String login;       // 当前用户登录用户名
+    private String name;        // 当前用户昵称
+    private String avatar_url;  // 当前用户的头像链接
 
     public void setId(int id) {
         this.id = id;
@@ -65,4 +66,13 @@ public class User implements Serializable{
         return this.avatar_url;
     }
 
+    @Override
+    public String toString() {
+        return "Hello{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", name='" + name + '\'' +
+                ", avatar_url='" + avatar_url + '\'' +
+                '}';
+    }
 }

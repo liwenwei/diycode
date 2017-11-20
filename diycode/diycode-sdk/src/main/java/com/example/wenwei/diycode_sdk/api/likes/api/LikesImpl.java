@@ -1,6 +1,7 @@
 package com.example.wenwei.diycode_sdk.api.likes.api;
 
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.example.wenwei.diycode_sdk.api.base.bean.State;
@@ -10,6 +11,10 @@ import com.example.wenwei.diycode_sdk.api.likes.event.*;
 import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
 
 public class LikesImpl extends BaseImpl<LikesService> implements LikesAPI {
+
+    public LikesImpl(@NonNull Context context) {
+        super(context);
+    }
 
     /**
      * 赞
