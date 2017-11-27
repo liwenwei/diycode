@@ -1,1 +1,1 @@
-include ':diycode-app', ':diycode-sdk', ':recyclerview'
+include ':diycode-app', ':diycode-sdk', ':recyclerview', ':expectanim'
