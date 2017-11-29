@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode.app;
+package com.example.wenwei.diycode.base.app;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
