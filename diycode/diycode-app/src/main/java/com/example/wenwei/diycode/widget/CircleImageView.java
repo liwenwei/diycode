@@ -12,6 +12,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -88,6 +89,7 @@ public class CircleImageView extends ImageView {
         }
     }
 
+
     @Override
     protected void onDraw(Canvas canvas) {
         if (getDrawable() == null) {
@@ -128,7 +130,20 @@ public class CircleImageView extends ImageView {
         }
 
         try {
+            Bitmap bitmap;
 
+            if (drawable instanceof ColorDrawable) {
+                bitmap = Bitmap.createBitmap(COLORDRAWABLE_DIMENSION, COLORDRAWABLE_DIMENSION, BITMAP_CONFIG);
+            } else {
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), BITMAP_CONFIG);
+            }
+
+            Canvas canvas = new Canvas(bitmap);
+            drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            drawable.draw(canvas);
+            return bitmap;
+        } catch (OutOfMemoryError e) {
+            return null;
         }
     }
 
@@ -166,7 +181,7 @@ public class CircleImageView extends ImageView {
     }
 
     private void updateShaderMatrix() {
-        float scale = 0;
+        float scale;
         float dx = 0;
         float dy = 0;
 

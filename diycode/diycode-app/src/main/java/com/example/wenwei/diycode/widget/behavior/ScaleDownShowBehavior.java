@@ -9,6 +9,9 @@ import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * Tab 行为控制器
+ */
 public class ScaleDownShowBehavior extends FloatingActionButton.Behavior {
 
     public ScaleDownShowBehavior(Context context, AttributeSet attrs) {
