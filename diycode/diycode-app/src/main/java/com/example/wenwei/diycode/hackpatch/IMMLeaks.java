@@ -24,7 +24,7 @@ import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.KITKAT;
 
 /**
- * ImputMethodManager memory leak
+ * InputMethodManager memory leak
  */
 public class IMMLeaks {
 
