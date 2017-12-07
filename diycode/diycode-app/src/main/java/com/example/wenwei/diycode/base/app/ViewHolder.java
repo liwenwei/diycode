@@ -57,7 +57,7 @@ public class ViewHolder {
      * @param text   文本内容
      * @return 是否成功
      */
-    public boolean setText(@NonNull int res_id, CharSequence text) {
+    public boolean setText(@NonNull String res_id, int text) {
         try {
             TextView textView = get(res_id);
             textView.setText(text);
