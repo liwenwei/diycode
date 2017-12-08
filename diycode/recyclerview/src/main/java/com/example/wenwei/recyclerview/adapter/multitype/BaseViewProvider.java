@@ -19,7 +19,7 @@ public abstract class BaseViewProvider<T> {
 
     private LayoutInflater mInflater;
     private int mLayoutId;
-    private Context mContext;
+    protected Context mContext;
 
     public BaseViewProvider(@NonNull Context context, @NonNull @LayoutRes int layoutId) {
         mInflater = LayoutInflater.from(context);

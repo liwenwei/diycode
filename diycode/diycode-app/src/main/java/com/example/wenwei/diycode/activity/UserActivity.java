@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
+import com.example.wenwei.diycode.utils.ImageUtil;
 import com.example.wenwei.diycode.utils.RecyclerViewUtil;
 import com.example.wenwei.diycode.utils.TimeUtil;
 import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
@@ -93,7 +94,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
                 holder.setText(R.id.time, TimeUtil.computePastTime(bean.getUpdated_at()));
                 holder.setText(R.id.title, bean.getTitle());
                 ImageView avatar = holder.get(R.id.avatar);
-                ImageUtils.loadImage(mContext, user.getAvatar_url(), avatar);
+                ImageUtil.loadImage(mContext, user.getAvatar_url(), avatar);
                 holder.get(R.id.item).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

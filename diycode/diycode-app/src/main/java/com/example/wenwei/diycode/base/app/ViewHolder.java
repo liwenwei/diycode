@@ -53,11 +53,11 @@ public class ViewHolder {
     /**
      * 设置文本
      *
-     * @param res_id view 的 id
      * @param text   文本内容
+     * @param res_id view 的 id
      * @return 是否成功
      */
-    public boolean setText(@NonNull String res_id, int text) {
+    public boolean setText(String text, @NonNull int res_id) {
         try {
             TextView textView = get(res_id);
             textView.setText(text);
