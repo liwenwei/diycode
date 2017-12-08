@@ -15,6 +15,7 @@ import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.utils.RecyclerViewUtil;
+import com.example.wenwei.diycode.utils.TimeUtil;
 import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;
 import com.example.wenwei.diycode_sdk.api.user.bean.UserDetail;
@@ -23,6 +24,7 @@ import com.example.wenwei.diycode_sdk.api.user.event.GetUserEvent;
 import com.example.wenwei.diycode_sdk.log.Logger;
 import com.example.wenwei.recyclerview.adapter.base.RecyclerViewHolder;
 import com.example.wenwei.recyclerview.adapter.singletype.SingleTypeAdapter;
+import com.gcssloop.view.utils.DensityUtils;
 import com.github.florent37.expectanim.ExpectAnim;
 
 import org.greenrobot.eventbus.EventBus;
@@ -31,6 +33,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
+import static com.example.wenwei.diycode.R.id.recycler_view;
 import static com.github.florent37.expectanim.core.Expectations.*;
 
 
