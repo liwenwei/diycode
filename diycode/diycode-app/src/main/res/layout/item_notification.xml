@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/diy_white"
+        android:paddingBottom="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="16dp">
+
+        <com.example.wenwei.diycode.widget.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="42dp"
+            android:layout_height="43dp"
+            android:layout_marginRight="12dp"
+            app:border_color="#00000000"
+            app:border_width="0dp"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/notification_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/avatar"
+            android:gravity="center_vertical"
+            android:textColor="@color/diy_gray2"
+            android:textSize="14sp"
+            tools:text="Alen 回复了话题" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notification_type"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/avatar"
+            android:maxLines="2"
+            android:text="你有一条新回复"
+            android:textColor="@color/diy_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="1分钟前"
+            android:textColor="@color/diy_gray"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/diy_white_bg"/>
+
+</LinearLayout>
