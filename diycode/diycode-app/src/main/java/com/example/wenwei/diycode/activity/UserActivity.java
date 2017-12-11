@@ -70,7 +70,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         User user = (User) intent.getSerializableExtra(USER);
         if (null != user) {
             setTitle(user.getLogin());
-            holder.setText(user.getName(), R.id.username);
+            holder.setText(R.id.username, user.getName());
             holder.loadImage(this, user.getAvatar_url(), R.id.avatar);
             mDiycode.getUser(user.getLogin());
         } else {

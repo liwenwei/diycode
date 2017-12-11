@@ -78,6 +78,15 @@ public class BaseEvent<T> {
     }
 
     /**
+     * 判断状态
+     *
+     * @return 状态吗
+     */
+    public Integer getCode() {
+        return code;
+    }
+
+    /**
      * 获取返回码详情
      *
      * @return 描述信息

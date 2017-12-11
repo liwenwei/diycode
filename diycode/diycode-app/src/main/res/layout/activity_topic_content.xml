@@ -173,7 +173,7 @@
                     android:id="@+id/login"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/bg_longin_btn"
+                    android:background="@drawable/bg_login_btn"
                     android:text="登录"/>
 
                 <TextView
