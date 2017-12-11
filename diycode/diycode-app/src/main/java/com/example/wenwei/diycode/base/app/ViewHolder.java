@@ -57,7 +57,7 @@ public class ViewHolder {
      * @param res_id view 的 id
      * @return 是否成功
      */
-    public boolean setText(String text, @NonNull int res_id) {
+    public boolean setText(@NonNull int res_id, CharSequence text) {
         try {
             TextView textView = get(res_id);
             textView.setText(text);
@@ -72,5 +72,20 @@ public class ViewHolder {
         String url2 = url;
         if (url2.contains("diycode"))
             url2.replace("large_avatar", "avatar");
+    }
+
+    /**
+     * 设置监听器
+     *
+     * @param l   监听器
+     * @param ids view 的 id
+     */
+    public void setOnClickListener(View.OnClickListener l, int... ids) {
+        if (ids == null) {
+            return;
+        }
+        for (int id : ids) {
+            get(id).setOnClickListener(l);
+        }
     }
 }
