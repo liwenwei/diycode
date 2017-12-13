@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.wenwei.recyclerview.adapter.base.RecyclerViewHolder;
 
 /**
- * ItemView 的管理者
+ * ItemView 的管理者， 对View进行一些基本的操作
  *
  * @param <T>
  */

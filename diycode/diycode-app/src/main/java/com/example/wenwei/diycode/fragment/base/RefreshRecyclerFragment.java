@@ -48,7 +48,7 @@ public abstract class RefreshRecyclerFragment<T, Event extends BaseEvent<List<T>
 
     // View
     private SwipeRefreshLayout mRefreshLayout;
-    private RecyclerView mRecyclerView;
+    protected RecyclerView mRecyclerView;
 
     protected HeaderFooterAdapter mAdapter;
     protected FooterProvider mFooterProvider;

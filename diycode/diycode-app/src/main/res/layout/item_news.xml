@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <view
+        android:layout_width="match_parent"
+        android:layout_height=".4dp"
+        android:background="@color/diy_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/diy_white"
+        android:paddingBottom="@dimen/topic_item_padding_vertical"
+        android:paddingLeft="@dimen/topic_item_padding_horizontal"
+        android:paddingRight="@dimen/topic_item_padding_horizontal"
+        android:paddingTop="@dimen/topic_item_padding_vertical">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/panel_space_1"
+            android:layout_height="@dimen/panel_space_1"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/avatar"
+            android:gravity="center_vertical"
+            android:text="diytest"
+            android:textSize="@dimen/panel_text_1" />
+
+        <TextView
+            android:id="@+id/point"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/username"
+            android:gravity="center_vertical"
+            android:text="·"
+            android:textColor="@color/diy_gray"
+            android:textSize="@dimen/panel_text_1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/node_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/point"
+            android:gravity="center_vertical"
+            android:text="Android"
+            android:textColor="@color/diy_gray"
+            android:textSize="@dimen/panel_text_1" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="1分钟前"
+            android:textColor="@color/diy_gray"
+            android:textSize="@dimen/panel_text_1" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avatar"
+            android:layout_marginRight="@dimen/topic_item_padding_vertical"
+            android:paddingTop="@dimen/topic_item_padding_vertical"
+            android:text="GcsTest(测试节点)"
+            android:textColor="@color/diy_black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/host_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginRight="@dimen/topic_item_padding_vertical"
+            android:layout_marginTop="8dp"
+            android:maxLines="3"
+            android:textColor="@color/diy_gray2"
+            android:textSize="14sp"
+            tools:text="www.gcssloop.com" />
+
+        <ImageView
+            android:id="@+id/collection"
+            android:layout_width="@dimen/panel_space_1"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/host_name"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="12dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_collection_default"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="@dimen/panel_space_1"
+            android:layout_height="@dimen/panel_space_1"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/host_name"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="11dp"
+            android:layout_toLeftOf="@id/collection"
+            android:padding="2dp"
+            android:src="@drawable/ic_like_default"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>
