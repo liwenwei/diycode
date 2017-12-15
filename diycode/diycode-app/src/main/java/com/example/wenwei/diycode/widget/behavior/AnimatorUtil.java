@@ -13,6 +13,7 @@ public class AnimatorUtil {
 
     private static AccelerateInterpolator LINER_INTERPOLATOR = new AccelerateInterpolator();
 
+
     // 显示view
     public static void scaleShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         view.setVisibility(View.VISIBLE);
@@ -33,30 +34,30 @@ public class AnimatorUtil {
                 .scaleY(0.0f)
                 .alpha(0.0f)
                 .setDuration(800)
+                .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
+                .setListener(viewPropertyAnimatorListener)
+                .start();
+    }
+
+    // 显示view
+    public static void translateShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
+        view.setVisibility(View.VISIBLE);
+        ViewCompat.animate(view)
+                .translationY(0)
+                .setDuration(400)
                 .setListener(viewPropertyAnimatorListener)
                 .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
                 .start();
     }
 
-    // 显示View
-    public static void translateShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
-        view.setVisibility(View.VISIBLE);
-        ViewCompat.animate(view)
-                .translationY(0)
-                .setDuration(100)
-                .setListener(viewPropertyAnimatorListener)
-                .setInterpolator(LINER_INTERPOLATOR)
-                .start();
-    }
-
-    // 显示View
+    // 隐藏view
     public static void translateHide(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         view.setVisibility(View.VISIBLE);
         ViewCompat.animate(view)
                 .translationY(260)
                 .setDuration(400)
+                .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
                 .setListener(viewPropertyAnimatorListener)
-                .setInterpolator(LINER_INTERPOLATOR)
                 .start();
     }
 }

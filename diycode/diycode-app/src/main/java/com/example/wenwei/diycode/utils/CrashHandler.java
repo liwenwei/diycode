@@ -40,7 +40,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private CrashHandler() {
     }
 
-    public CrashHandler getInstance() {
+    public static CrashHandler getInstance() {
         return sInstance;
     }
 
