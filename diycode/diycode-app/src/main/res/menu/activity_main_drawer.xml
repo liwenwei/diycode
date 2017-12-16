@@ -15,7 +15,7 @@
     <item android:title="软件设置">
         <menu>
             <item
-                android:id="@+id/nav_content"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/nav_menu_about"
                 android:title="关于我们" />
             <item
