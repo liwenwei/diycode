@@ -18,7 +18,7 @@ public class ViewHolder {
 
     public ViewHolder(LayoutInflater inflater, ViewGroup parent, int layoutId) {
         this.mViews = new SparseArray<>();
-        mRootView = inflater.inflate(layoutId, parent);
+        mRootView = inflater.inflate(layoutId, parent, false);
     }
 
     /**
