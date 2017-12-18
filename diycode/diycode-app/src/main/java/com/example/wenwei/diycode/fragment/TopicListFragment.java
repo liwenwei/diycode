@@ -15,6 +15,7 @@ import com.example.wenwei.recyclerview.adapter.multitype.HeaderFooterAdapter;
 import java.util.List;
 
 public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetTopicsListEvent> {
+    private final String TAG = "TopicListFragment";
 
     private boolean isFirstLaunch = true;
 
@@ -28,6 +29,7 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
         // 优先从缓存中获取数据，如果是第一次加载则恢复滚动位置，如果没有缓存则从网络加载
         List<Object> topics = mDataCache.getTopicsListObj();
         if (topics != null && topics.size() > 0) {
+            Logger.d(TAG, "topics : " + topics.size());
             pageIndex = mConfig.getTopicListPageIndex();
             adapter.addDatas(topics);
             if (isFirstLaunch) {

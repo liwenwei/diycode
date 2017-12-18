@@ -20,6 +20,7 @@ import java.util.List;
  * 首页 news tab 列表
  */
 public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNewsListEvent> {
+    private final String TAG = "NewsListFragment";
 
     private boolean isFirstLaunch = true;
 
@@ -33,7 +34,7 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
         // 优先从缓存中获取数据，如果是第一次加载则恢复滚动位置，如果没有缓存则从网络加载
         List<Object> news = mDataCache.getNewsListObj();
         if (news != null && news.size() > 0) {
-            Logger.e("news : " + news.size());
+            Logger.d(TAG, "news : " + news.size());
             pageIndex = mConfig.getNewsListPageIndex();
             adapter.addDatas(news);
             if (isFirstLaunch) {
