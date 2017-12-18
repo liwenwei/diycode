@@ -36,7 +36,7 @@ public class TopicProvider extends BaseViewProvider<Topic> {
         holder.setText(R.id.username, user.getLogin());
         holder.setText(R.id.node_name, bean.getNode_name());
         holder.setText(R.id.time, TimeUtil.computePastTime(bean.getUpdated_at()));
-        holder.setText(R.id.title, user.getLogin());
+        holder.setText(R.id.title, bean.getTitle());
 
         // 加载头像
         ImageView imageView = holder.get(R.id.avatar);
@@ -69,5 +69,7 @@ public class TopicProvider extends BaseViewProvider<Topic> {
                 }
             }
         };
+
+        holder.setOnClickListener(listener, R.id.avatar, R.id.username, R.id.item, R.id.node_name);
     }
 }
