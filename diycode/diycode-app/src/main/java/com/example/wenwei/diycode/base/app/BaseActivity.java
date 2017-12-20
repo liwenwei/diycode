@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initViews(mViewHolder, mViewHolder.getRootView());
     }
 
+    @LayoutRes
     protected abstract int getLayoutId();
 
     /**
@@ -148,6 +150,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public <V extends Serializable> void openActivity(Context context, Class<?> cls, String key, V value) {
         Intent intent = new Intent(context, cls);
         intent.putExtra(key, value);
-        startActivity(intent);
+        context.startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package com.example.wenwei.recyclerview.adapter.base;
 
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;
@@ -22,7 +23,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         return mRootView;
     }
 
-    private final SparseArray<View> mViews = new SparseArray<>();
+    private final SparseArray<View> mViews = new SparseArray<View>();
 
     private <T extends View> T bindView(int id) {
         T view = (T) mViews.get(id);
@@ -48,6 +49,10 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void setText(int id, String text) {
         TextView textView = get(id);
-        textView.setText(text);
+        if (textView != null) {
+            textView.setText(text);
+        } else {
+            Log.v("RecyclerViewHolder", Integer.toHexString(id));
+        }
     }
 }

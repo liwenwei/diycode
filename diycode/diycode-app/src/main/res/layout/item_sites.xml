@@ -16,5 +16,5 @@
         android:maxLines="1"
         android:padding="12dp"
         android:textSize="12sp"
-        tools:text="GcsSloop" />
+        tools:text="liwenwei" />
 </LinearLayout>

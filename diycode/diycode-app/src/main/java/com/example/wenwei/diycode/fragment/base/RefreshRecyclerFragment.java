@@ -4,7 +4,6 @@ package com.example.wenwei.diycode.fragment.base;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.util.ArrayMap;
-import android.support.v4.widget.EdgeEffectCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -27,7 +26,7 @@ import java.util.List;
  */
 public abstract class RefreshRecyclerFragment<T, Event extends BaseEvent<List<T>>> extends BaseFragment {
     // 请求状态 - 下拉刷新，还是加载更多
-    public static final String POST_LOAD_MORE = "laod_more";
+    public static final String POST_LOAD_MORE = "load_more";
     public static final String POST_REFRESH = "refresh";
     private ArrayMap<String, String> mPostTypes = new ArrayMap<>(); // 请求类型
 
@@ -40,7 +39,7 @@ public abstract class RefreshRecyclerFragment<T, Event extends BaseEvent<List<T>
 
     // 分页加载
     protected int pageIndex = 0;                // 当前页码
-    protected int pageCount = 20;               // 每页加载次数
+    protected int pageCount = 20;               // 每页加载个数
 
     // 状态
     private boolean refreshEnable = true;           // 是否允许刷新
@@ -121,12 +120,12 @@ public abstract class RefreshRecyclerFragment<T, Event extends BaseEvent<List<T>
         String postType = mPostTypes.get(event.getUUID());
         if (event.isOk()) {
             if (postType.equals(POST_LOAD_MORE)) {
-                onLoadMore(event, mAdapter);
+                onLoadMore(event);
             } else if (postType.equals(POST_REFRESH)) {
-                onRefresh(event, mAdapter);
+                onRefresh(event);
             }
         } else {
-            onError(event, postType);
+            onError(event);
         }
         mPostTypes.remove(event.getUUID());
     }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -19,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+	    android:baselineAligned="false"
             android:orientation="vertical">
 
             <TextView
@@ -33,7 +35,7 @@
                 android:id="@+id/clear_cache"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/diy_white_bg"
+                android:background="@color/diy_white"
                 android:padding="16dp">
 
                 <TextView
@@ -63,7 +65,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/diy_white_bg"
+                android:background="@color/diy_white"
                 android:padding="16dp">
 
                 <TextView
@@ -77,6 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+		    android:checked="true"
                     android:text="v0.0.1" />
             </RelativeLayout>
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/diy_white_bg"
@@ -7,11 +9,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/footer"
+        android:id="@+id/test_text"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:gravity="center"
         android:text="-- end --"
-        android:textSize="16sp" />
+        android:textSize="16sp"/>
 
 </RelativeLayout>

@@ -48,7 +48,7 @@ public class MarkdownView extends WebView {
         this(context, attrs, 0);
     }
 
-    // @SuppressLint({"AddJavascriptInterface", "SetJavascriptEnabled"})
+    @SuppressLint({"AddJavascriptInterface", "SetJavaScriptEnabled"})
     public MarkdownView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         if (isInEditMode()) {
@@ -93,7 +93,7 @@ public class MarkdownView extends WebView {
         }
 
         setWebChromeClient(new WebChromeClient() {
-            // @SuppressLint("JavascriptInterface")
+            @SuppressLint("JavascriptInterface")
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
@@ -134,7 +134,7 @@ public class MarkdownView extends WebView {
         try {
             StringBuilder buf = new StringBuilder();
             InputStream json = getContext().getAssets().open(assetsFilePath);
-            BufferedReader in = new BufferedReader(new InputStreamReader(json));
+            BufferedReader in = new BufferedReader(new InputStreamReader(json, "UTF-8"));
             String str;
             while ((str = in.readLine()) != null) {
                 buf.append(str).append("\n");

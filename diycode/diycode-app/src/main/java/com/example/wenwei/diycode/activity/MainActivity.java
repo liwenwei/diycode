@@ -54,12 +54,12 @@ public class MainActivity extends BaseActivity implements
     private boolean isToolbarFirstClick = true;
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_main;
     }
 
     @Override
-    protected void initViews(ViewHolder holder, View root) {
+    public void initViews(ViewHolder holder, View root) {
         EventBus.getDefault().register(this);
         mCache = new DataCache(this);
         mConfig = Config.getSingleInstance();
@@ -88,13 +88,11 @@ public class MainActivity extends BaseActivity implements
 
             @Override
             public Fragment getItem(int position) {
-                if (position == 0)
-                    return mFragment1;
-                if (position == 1)
-                    return mFragment2;
-                if (position == 2)
+                if (position == 2) {
                     return mFragment3;
-                return TextFragment.newInstance(types[position]);
+                } else {
+                    return TextFragment.newInstance(types[position]);
+                }
             }
 
             @Override
@@ -158,7 +156,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onLouout(LogoutEvent event) {
+    public void onLogout(LogoutEvent event) {
         loadMenuData();
     }
 

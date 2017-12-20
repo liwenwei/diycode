@@ -14,10 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/diy_white"
-        android:paddingBottom="16dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="16dp">
+        android:paddingBottom="@dimen/topic_item_padding_vertical"
+        android:paddingLeft="@dimen/topic_item_padding_horizontal"
+        android:paddingRight="@dimen/topic_item_padding_horizontal"
+        android:paddingTop="@dimen/topic_item_padding_vertical">
 
         <ImageView
             android:id="@+id/avatar"

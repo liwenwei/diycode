@@ -22,7 +22,7 @@ public abstract class BaseImageActivity extends BaseActivity {
     protected int current_image_position = 0;                  // 当前图片位置
 
     @Override
-    protected void initViews(ViewHolder holder, View root) {
+    protected void initDatas() {
         super.initDatas();
 
         // 初始化图片url和图片集合，保证两个数据都在
@@ -35,6 +35,7 @@ public abstract class BaseImageActivity extends BaseActivity {
             mCurrentMode = MODE_ERROR;
             return;
         }
+        mCurrentMode = MODE_NORMAL;
 
         ArrayList<String> temp = intent.getStringArrayListExtra(ALL_IMAGE_URLS);
         if (temp == null || temp.size() <= 0) {
@@ -51,7 +52,7 @@ public abstract class BaseImageActivity extends BaseActivity {
         }
 
         current_image_url = imageUrl;
-        current_image_position = images.indexOf(imageUrl);
+        current_image_position = images.indexOf(current_image_url);
 
     }
 }

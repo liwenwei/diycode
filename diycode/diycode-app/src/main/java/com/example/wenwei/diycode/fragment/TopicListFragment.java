@@ -2,6 +2,7 @@ package com.example.wenwei.diycode.fragment;
 
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.example.wenwei.diycode.fragment.base.SimpleRefreshRecyclerFragment;
 import com.example.wenwei.diycode.fragment.provider.TopicProvider;
 import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
 import com.example.wenwei.diycode_sdk.api.topic.event.GetTopicsListEvent;
+import com.example.wenwei.diycode_sdk.log.Logger;
 import com.example.wenwei.recyclerview.adapter.multitype.HeaderFooterAdapter;
 
 import java.util.List;
@@ -20,7 +22,9 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
     private boolean isFirstLaunch = true;
 
     public static TopicListFragment newInstance() {
+        Bundle args = new Bundle();
         TopicListFragment fragment = new TopicListFragment();
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -44,8 +48,9 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
     }
 
     @Override
-    protected void setAdapterRegister(Context context, RecyclerView recyclerView, HeaderFooterAdapter adapter) {
-        adapter.register(Topic.class, new TopicProvider(context));
+    protected void setAdapterRegister(Context context, RecyclerView recyclerView,
+                                      HeaderFooterAdapter adapter) {
+        adapter.register(Topic.class, new TopicProvider(getContext()));
     }
 
     @NonNull

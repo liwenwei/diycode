@@ -36,8 +36,8 @@ public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     //--- RecyclerView.Adapter ---------------------------------------------------------------------
 
     @Override
-    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        BaseViewProvider provider = getProviderByIndex(viewType);
+    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int indexViewType) {
+        BaseViewProvider provider = getProviderByIndex(indexViewType);
         return provider.onCreateViewHolder(parent);
     }
 

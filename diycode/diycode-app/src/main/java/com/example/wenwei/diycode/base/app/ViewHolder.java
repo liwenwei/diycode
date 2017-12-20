@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wenwei.diycode_sdk.log.Logger;
 
 public class ViewHolder {
@@ -57,7 +59,7 @@ public class ViewHolder {
      * @param res_id view 的 id
      * @return 是否成功
      */
-    public boolean setText(@NonNull int res_id, CharSequence text) {
+    public boolean setText(CharSequence text, @NonNull int res_id) {
         try {
             TextView textView = get(res_id);
             textView.setText(text);
@@ -67,11 +69,16 @@ public class ViewHolder {
         }
     }
 
+    public boolean setText(@NonNull int res_id, CharSequence text) {
+        return setText(text, res_id);
+    }
+
     public void loadImage(Context context, String url, int res_id) {
         ImageView imageView = get(res_id);
         String url2 = url;
-        if (url2.contains("diycode"))
-            url2.replace("large_avatar", "avatar");
+        if (url.contains("diycode"))
+            url2 = url.replace("large_avatar", "avatar");
+        Glide.with(context).load(url2).diskCacheStrategy(DiskCacheStrategy.SOURCE).into(imageView);
     }
 
     /**

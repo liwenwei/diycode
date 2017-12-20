@@ -40,7 +40,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+	    android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.SettingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
