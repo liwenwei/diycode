@@ -36,12 +36,12 @@
                 android:paddingTop="@dimen/topic_item_padding_vertical"
                 app:layout_scrollFlags="scroll">
 
-                <com.gcssloop.diycode.widget.CircleImageView
-                    app:border_width="0dp"
-                    app:border_color="#00000000"
+                <com.example.wenwei.diycode.widget.CircleImageView
                     android:id="@+id/avatar"
                     android:layout_width="@dimen/panel_space_2"
                     android:layout_height="@dimen/panel_space_2"
+                    app:border_color="#00000000"
+                    app:border_width="0dp"
                     tools:src="@mipmap/ic_launcher"/>
 
                 <TextView
@@ -205,15 +205,15 @@
                     android:textSize="16sp"/>
 
                 <Button
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/topic_reply_btn_bg"
                     android:id="@+id/send_reply"
                     android:layout_width="80dp"
                     android:layout_height="36dp"
                     android:layout_alignParentRight="true"
-                    android:textColor="@color/diy_white"
                     android:layout_below="@id/my_reply"
-                    android:text="发送"/>
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/topic_reply_btn_bg"
+                    android:text="发送"
+                    android:textColor="@color/diy_white"/>
             </RelativeLayout>
 
             <View

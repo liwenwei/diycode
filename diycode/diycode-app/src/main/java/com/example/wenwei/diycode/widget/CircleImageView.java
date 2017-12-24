@@ -25,7 +25,7 @@ import com.example.wenwei.diycode.R;
  */
 public class CircleImageView extends ImageView {
 
-    private final ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
+    private final ImageView.ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
     private static final int COLORDRAWABLE_DIMENSION = 1;
@@ -162,10 +162,10 @@ public class CircleImageView extends ImageView {
         mBitmapPaint.setAntiAlias(true);
         mBitmapPaint.setShader(mBitmapShader);
 
-        mBitmapPaint.setStyle(Paint.Style.STROKE);
-        mBitmapPaint.setAntiAlias(true);
-        mBitmapPaint.setColor(mBorderColor);
-        mBitmapPaint.setStrokeWidth(mBorderWidth);
+        mBorderPaint.setStyle(Paint.Style.STROKE);
+        mBorderPaint.setAntiAlias(true);
+        mBorderPaint.setColor(mBorderColor);
+        mBorderPaint.setStrokeWidth(mBorderWidth);
 
         mBitmapHeight = mBitmap.getHeight();
         mBitmapWidth = mBitmap.getWidth();
