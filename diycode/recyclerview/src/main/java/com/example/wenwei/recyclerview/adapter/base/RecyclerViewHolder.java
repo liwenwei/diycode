@@ -49,10 +49,6 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public void setText(int id, String text) {
         TextView textView = get(id);
-        if (textView != null) {
-            textView.setText(text);
-        } else {
-            Log.v("RecyclerViewHolder", Integer.toHexString(id));
-        }
+        textView.setText(text);
     }
 }

@@ -88,7 +88,11 @@ public class MainActivity extends BaseActivity implements
 
             @Override
             public Fragment getItem(int position) {
-                if (position == 2) {
+                if (position == 0) {
+                    return mFragment1;
+                } else if (position == 1) {
+                    return mFragment2;
+                } else if (position == 2) {
                     return mFragment3;
                 } else {
                     return TextFragment.newInstance(types[position]);

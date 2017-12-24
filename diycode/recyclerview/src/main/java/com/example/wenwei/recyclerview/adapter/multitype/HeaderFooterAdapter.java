@@ -55,6 +55,17 @@ public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         return mItems.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        assert mItems != null;
+        Object item = mItems.get(position);
+        int index = mTypePool.indexOf(item.getClass());
+        if (index >= 0) {
+            return index;
+        }
+        return mTypePool.indexOf(item.getClass());
+    }
+
     //--- implement TypePool -----------------------------------------------------------------------
 
     @Override
