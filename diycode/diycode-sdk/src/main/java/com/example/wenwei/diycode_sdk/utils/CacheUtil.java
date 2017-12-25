@@ -18,6 +18,7 @@ public class CacheUtil {
         cache = ACache.get(context);
     }
 
+    //--- token ------------------------------------------------------------------------------------
     public void saveToken(@NonNull Token token) {
         cache.put(TOKEN_KEY_NAME, token);
     }

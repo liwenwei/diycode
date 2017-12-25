@@ -16,7 +16,7 @@ import com.example.wenwei.diycode.fragment.NotificationsFragment;
 public class NotificationActivity extends BaseActivity {
     @Override
     protected int getLayoutId() {
-        return R.layout.item_notification;
+        return R.layout.activity_fragment;
     }
 
     @Override
