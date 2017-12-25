@@ -290,6 +290,7 @@ public class MainActivity extends BaseActivity implements
             } else {
                 openActivity(LoginActivity.class);
             }
+			return true;
         }
         return super.onOptionsItemSelected(item);
     }

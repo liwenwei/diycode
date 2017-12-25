@@ -57,7 +57,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.logout:
-                if (mDiycode.isLogin())
+                if (!mDiycode.isLogin())
                     return;
                 mDiycode.logout();
                 toastShort("退出成功");

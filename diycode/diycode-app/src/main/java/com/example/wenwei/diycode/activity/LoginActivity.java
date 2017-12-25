@@ -67,7 +67,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onStop() {
         super.onStop();
-        unRegisterKeyboardListener();
         EventBus.getDefault().unregister(this);
     }
 
@@ -107,8 +106,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     getViewHolder().get(R.id.span2).setVisibility(View.GONE);
                 } else {
                     Logger.e("软键盘未弹起");
-                    getViewHolder().get(R.id.span1).setVisibility(View.VISIBLE);
-                    getViewHolder().get(R.id.span2).setVisibility(View.VISIBLE);
+                    getViewHolder().get(R.id.span1).setVisibility(View.INVISIBLE);
+                    getViewHolder().get(R.id.span2).setVisibility(View.INVISIBLE);
                 }
             }
         });
