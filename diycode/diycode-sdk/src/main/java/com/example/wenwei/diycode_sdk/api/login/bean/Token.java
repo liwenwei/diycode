@@ -53,9 +53,11 @@ public class Token implements Serializable {
     @Override
     public String toString() {
         return "Token{" +
-                "access_token'" + access_token + "'" +
-                "token_type'" + token_type + "'" +
-                "expires_in'" + expires_in + "'" +
-                "created_at'" + created_at + "'";
+                "access_token='" + access_token + '\'' +
+                ", token_type='" + token_type + '\'' +
+                ", expires_in=" + expires_in +
+                ", refresh_token='" + refresh_token + '\'' +
+                ", created_at=" + created_at +
+                '}';
     }
 }
