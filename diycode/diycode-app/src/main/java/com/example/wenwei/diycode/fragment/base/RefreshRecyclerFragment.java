@@ -119,10 +119,12 @@ public abstract class RefreshRecyclerFragment<T, Event extends BaseEvent<List<T>
     public void onResultEvent(Event event) {
         String postType = mPostTypes.get(event.getUUID());
         if (event.isOk()) {
-            if (postType.equals(POST_LOAD_MORE)) {
-                onLoadMore(event);
-            } else if (postType.equals(POST_REFRESH)) {
-                onRefresh(event);
+            if (postType != null) {
+                if (postType.equals(POST_LOAD_MORE)) {
+                    onLoadMore(event);
+                } else if (postType.equals(POST_REFRESH)) {
+                    onRefresh(event);
+                }
             }
         } else {
             onError(event);
