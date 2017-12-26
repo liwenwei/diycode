@@ -3,6 +3,7 @@ package com.example.wenwei.diycode.base.glide;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -42,7 +43,7 @@ public class UrlDrawable extends Drawable implements Drawable.Callback {
         if (mDrawable != null) {
             return mDrawable.getOpacity();
         }
-        return 0;
+        return PixelFormat.UNKNOWN;
     }
 
     public void setDrawable(GlideDrawable drawable) {

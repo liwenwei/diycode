@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
-    <issue id="all">
+    <issue id="all" severity="error">
         <ignore path="src/androidTest" />
         <ignore path="src/test" />
+    </issue>
+    <issue id="AppCompatCustomView" severity="error">
+        <ignore path="src/main/java/com/example/wenwei/diycode/widget/CircleImageView.java" />
     </issue>
 </lint>

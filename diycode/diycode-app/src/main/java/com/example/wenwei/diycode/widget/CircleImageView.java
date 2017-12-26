@@ -24,7 +24,7 @@ import com.example.wenwei.diycode.R;
  * 圆形图片
  */
 public class CircleImageView extends ImageView {
-
+    // TODO: Using android.support.v7.widget.AppCompat to support older version of Android OS
     private final ImageView.ScaleType SCALE_TYPE = ScaleType.CENTER_CROP;
 
     private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;

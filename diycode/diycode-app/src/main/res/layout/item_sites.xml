@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:background="@color/diy_white_bg"
         android:ellipsize="marquee"
-        android:maxLines="1"
         android:padding="12dp"
         android:textSize="12sp"
-        tools:text="liwenwei" />
+        tools:text="liwenwei"
+        android:singleLine="true" />
 </LinearLayout>
