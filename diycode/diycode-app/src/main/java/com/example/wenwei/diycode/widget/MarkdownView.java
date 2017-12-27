@@ -40,6 +40,8 @@ public class MarkdownView extends WebView {
 
     private String mPreviewText;
 
+    private final Paint mPaint = new Paint();
+
     public MarkdownView(Context context) {
         this(context, null);
     }
@@ -70,11 +72,10 @@ public class MarkdownView extends WebView {
             canvas.drawColor(Color.WHITE);
             canvas.translate(canvas.getWidth() / 2, 30);
 
-            Paint paint = new Paint();
-            paint.setTextAlign(Paint.Align.CENTER);
-            paint.setTextSize(30);
-            paint.setColor(Color.GRAY);
-            canvas.drawText("MarkdownView", -30, 0, paint);
+            mPaint.setTextAlign(Paint.Align.CENTER);
+            mPaint.setTextSize(30);
+            mPaint.setColor(Color.GRAY);
+            canvas.drawText("MarkdownView", -30, 0, mPaint);
 
         }
     }
