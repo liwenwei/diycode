@@ -10,10 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.wenwei.diycode.R;
-import com.example.wenwei.diycode.activity.TopicActivity;
 import com.example.wenwei.diycode.activity.TopicContentActivity;
 import com.example.wenwei.diycode.activity.UserActivity;
-import com.example.wenwei.diycode.utils.HtmlUtil;
+import com.example.wenwei.diycode.utils.HtmlParser;
 import com.example.wenwei.diycode.utils.ImageUtil;
 import com.example.wenwei.diycode_sdk.api.notifications.bean.Notification;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;
@@ -58,7 +57,7 @@ public class NotificationsProvider extends BaseViewProvider<Notification> {
         ImageUtil.loadImage(mContext, actor.getAvatar_url(), imageView);
         holder.setText(R.id.notification_type, type);
 
-        Spanned result_desc = Html.fromHtml(HtmlUtil.removeP(desc));
+        Spanned result_desc = Html.fromHtml(HtmlParser.removeP(desc));
         TextView text_desc = holder.get(R.id.desc);
         text_desc.setText(result_desc);
 

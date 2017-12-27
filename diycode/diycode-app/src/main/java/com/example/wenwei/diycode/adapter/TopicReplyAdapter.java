@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.UserActivity;
 import com.example.wenwei.diycode.base.glide.GlideImageGetter;
-import com.example.wenwei.diycode.utils.HtmlUtil;
+import com.example.wenwei.diycode.utils.HtmlParser;
 import com.example.wenwei.diycode.utils.ImageUtil;
 import com.example.wenwei.diycode.utils.TimeUtil;
 import com.example.wenwei.diycode_sdk.api.topic.bean.TopicReply;
@@ -45,7 +45,7 @@ public class TopicReplyAdapter extends SingleTypeAdapter<TopicReply> {
 
         // TODO: 评论区代码高亮问题
         TextView content = holder.get(R.id.content);
-        content.setText(Html.fromHtml(HtmlUtil.removeP(bean.getBody_html()), new GlideImageGetter(mContext, content), null));
+        content.setText(Html.fromHtml(HtmlParser.removeP(bean.getBody_html()), new GlideImageGetter(mContext, content), null));
 
         holder.setOnClickListener(new View.OnClickListener() {
             @Override

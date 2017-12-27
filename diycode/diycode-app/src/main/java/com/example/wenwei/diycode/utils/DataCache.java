@@ -58,7 +58,7 @@ public class DataCache {
 
     public void saveTopicContent(TopicContent content) {
         saveData("topic_content_" + content.getId(), content);
-        String preview = HtmlUtil.html2Text(content.getBody_html());
+        String preview = HtmlParser.html2Text(content.getBody_html());
         if (preview.length() > 100) {
             preview = preview.substring(0, 100);
         }
