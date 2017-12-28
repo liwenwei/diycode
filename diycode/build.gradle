@@ -35,4 +35,5 @@ ext {
     minSdk = 14
     libraryVersion = "1.0.2"
     supportVersion = "25.1.0"
+    mockitoVersion = "2.+"
 }

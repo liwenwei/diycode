@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class HtmlParserUT {
+public class HtmlParserTest {
     @Test
     public void html2Text_default() {
         String originHtml = "<!DOCTYPE html>\n" +
