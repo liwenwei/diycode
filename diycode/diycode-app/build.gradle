@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.romandanylyk:pageindicatorview:0.1.2@aar'
     implementation 'org.jsoup:jsoup:1.11.2'
 
+    // Report Crash
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+
     implementation project(':diycode-sdk')
     implementation project(':expectanim')
     implementation project(':recyclerview')

@@ -5,8 +5,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
         android:name=".base.app.BaseApplication"
@@ -18,6 +21,24 @@
         <meta-data
             android:name="com.example.wenwei.diycode.base.glide.BaseGlideModule"
             android:value="GlideModule" />
+
+        <!-- 配置Bugly -->
+        <!-- 配置APP ID -->
+        <meta-data
+            android:name="BUGLY_APPID"
+            android:value="d7ee8522b8" />
+        <!-- 配置APP版本号 -->
+        <meta-data
+            android:name="BUGLY_APP_VERSION"
+            android:value="1.0.0.0" />
+        <!-- 配置APP渠道号 -->
+        <meta-data
+            android:name="BUGLY_APP_CHANNEL"
+            android:value="Google Play" />
+        <!-- 配置Bugly调试模式（true或者false）-->
+        <meta-data
+            android:name="BUGLY_ENABLE_DEBUG"
+            android:value="true" />
 
         <activity
             android:name=".activity.MainActivity"
@@ -42,7 +63,7 @@
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"
-	    android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.SettingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -60,13 +81,13 @@
             android:launchMode="singleTop" />
         <activity android:name=".activity.NodeListActivity" />
         <activity
+            android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"
             android:enabled="false"
             android:icon="@drawable/leak_canary_icon"
-            android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"
             android:taskAffinity="com.squareup.leakcanary">
             <intent-filter tools:node="remove">
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
