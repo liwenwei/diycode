@@ -98,6 +98,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initMarkdownView(ViewHolder holder) {
+        // 找到显示文章内容的webview container
         FrameLayout layout = holder.get(R.id.webview_container);
         mMarkdownView = new MarkdownView(this.getApplicationContext());
         mMarkdownView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,

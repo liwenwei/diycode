@@ -159,7 +159,7 @@ public class MarkdownView extends WebView {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             mPreviewText = String.format("javascript:preview('%s')", escMdText);
         } else {
-            mPreviewText = String.format("preview('%s)", escMdText);
+            mPreviewText = String.format("preview('%s')", escMdText);
         }
         initialize();
     }
