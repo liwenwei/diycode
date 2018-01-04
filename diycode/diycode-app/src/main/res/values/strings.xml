@@ -43,8 +43,4 @@
         See the License for the specific language governing permissions and
         limitations under the License.
     </string>
-
-    <!-- Regex Pattern -->
-    <string name="IMAGE_LINK_PATTERN">\\[!\\[.*\\]\\(.*\\)\\]\\(.*\\)</string>
-    <string name="IMAGE_PATTERN">!\\[.*\\]\\(.*\\)</string>
 </resources>

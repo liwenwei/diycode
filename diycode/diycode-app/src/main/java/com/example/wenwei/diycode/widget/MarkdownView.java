@@ -28,19 +28,6 @@ import java.io.InputStreamReader;
 public class MarkdownView extends WebView {
     private static final String TAG = MarkdownView.class.getSimpleName();
 
-    /**
-     * 带有点击的图片 => 为了防止被转换，提前转化为 html
-     * [text ![text](image_url) text](link) => <a href="link" ><img src="image_url" /></a>
-     */
-    private static String IMAGE_LINK_PATTERN = null;
-    private static final String IMAGE_LINK_REPLACE = "<a href=\"$5\" >$1<img src=\"$3\" />$4</a>";
-    /**
-     * 纯图片 => 添加点击跳转，方便后期拦截
-     * ![text](image_url) => <img class="gcs-img-sign" src="image_url" />
-     */
-    private static String IMAGE_PATTERN = null;
-    private static final String IMAGE_REPLACE = "<img class=\"gcs-img-sign\" src=\"$2\" />";
-
     private String mPreviewText;
 
     private final Paint mPaint = new Paint();
@@ -64,9 +51,6 @@ public class MarkdownView extends WebView {
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-
-        IMAGE_LINK_PATTERN = context.getString(R.string.IMAGE_LINK_PATTERN);
-        IMAGE_PATTERN = context.getString(R.string.IMAGE_PATTERN);
 
         initialize();
     }
@@ -154,27 +138,13 @@ public class MarkdownView extends WebView {
     }
 
     public void setMarkDownText(String markDownText) {
-        String injectMdText = injectImageLink(markDownText);
-        String escMdText = escapeForText(injectMdText);
+        String escMdText = escapeForText(markDownText);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             mPreviewText = String.format("javascript:preview('%s')", escMdText);
         } else {
             mPreviewText = String.format("preview('%s')", escMdText);
         }
         initialize();
-    }
-
-    /**
-     * 注入图片链接
-     *
-     * @param mdText Markdown 文本
-     * @return String
-     */
-    private String injectImageLink(String mdText) {
-        // TODO: 修复代码区md格式图片被替换问题
-        mdText = mdText.replaceAll(IMAGE_LINK_PATTERN, IMAGE_LINK_REPLACE);
-        mdText = mdText.replaceAll(IMAGE_PATTERN, IMAGE_REPLACE);
-        return mdText;
     }
 
     /**
