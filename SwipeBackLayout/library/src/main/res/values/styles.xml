@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- required -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 要想 Activity 滑出屏幕后不遮挡下层 Activity ，需设置透明主题 -->
+    <style name="AppTheme.SwipeBack" parent="@style/AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/AppTheme.SwipeBack.Animation</item>
+    </style>
+
+    <style name="AppTheme.SwipeBack.Animation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_swipe_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/anim_swipe_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/anim_swipe_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_swipe_out</item>
+    </style>
+
+</resources>
