@@ -22,7 +22,9 @@ import com.example.wenwei.diycode_sdk.api.Diycode;
 import java.io.Serializable;
 import java.security.Key;
 
-public abstract class BaseActivity extends AppCompatActivity {
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
+public abstract class BaseActivity extends SwipeBackActivity {
 
     protected Diycode mDiycode;
     protected ViewHolder mViewHolder;

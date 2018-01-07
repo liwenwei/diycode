@@ -3,6 +3,7 @@ package com.example.wenwei.diycode.activity;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
@@ -39,6 +40,9 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 
 public class TopicContentActivity extends BaseActivity implements View.OnClickListener {
     public static String TOPIC = "topic";
@@ -54,9 +58,20 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     private EditText myReply;
 
+    private SwipeBackLayout mSwipeBackLayout;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_topic_content);
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+    }
+
     public static void newInstance(@NonNull Context context, @NonNull Topic topic) {
         Intent intent = new Intent(context, TopicContentActivity.class);
         intent.putExtra(TOPIC, topic);
+        intent.putExtra(TOPIC_ID, topic.getId());
         context.startActivity(intent);
     }
 
@@ -76,6 +91,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     protected void initDatas() {
         Intent intent = getIntent();
         topic_id = intent.getIntExtra(TOPIC_ID, -1);
+        topic_id = 1082;
         topic = (Topic) intent.getSerializableExtra(TOPIC);
         if (topic != null && topic_id <= 0) {
             topic_id = topic.getId();
@@ -168,7 +184,6 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
             mDiycode.getTopicRepliesList(topic.getId(), null, topic.getReplies_count());
         }
     }
-
 
     // 是否需重新加载 topic 详情
     private boolean shouldReloadTopic(@NonNull Topic topic) {

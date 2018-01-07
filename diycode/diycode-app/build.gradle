@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.android.support:customtabs:25.3.1'
     implementation 'com.romandanylyk:pageindicatorview:0.1.2@aar'
     implementation 'org.jsoup:jsoup:1.11.2'
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
 
     // Report Crash
     implementation 'com.tencent.bugly:crashreport:latest.release'
