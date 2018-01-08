@@ -25,7 +25,9 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
     private boolean isFirstLaunch = true;
 
     public static NewsListFragment newInstance() {
+        Bundle args = new Bundle();
         NewsListFragment fragment = new NewsListFragment();
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -49,8 +51,10 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
     }
 
     @Override
-    protected void setAdapterRegister(Context context, RecyclerView recyclerView, HeaderFooterAdapter adapter) {
-        adapter.register(New.class, new NewsProvider(context));
+    protected void setAdapterRegister(Context context, RecyclerView recyclerView,
+                                      HeaderFooterAdapter adapter) {
+        // TODO： Rename New as News
+        adapter.register(New.class, new NewsProvider(getContext()));
     }
 
     @NonNull
@@ -67,14 +71,14 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
 
     @Override
     protected void onLoadMore(GetNewsListEvent event, HeaderFooterAdapter adapter) {
-        // TODO 排除重复数据
+        // TODO: 排除重复数据
         super.onLoadMore(event, adapter);
         mDataCache.saveNewsListObj(adapter.getDatas());
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
 
         // 存储 PageIndex
         mConfig.saveNewsListPageIndex(pageIndex);
