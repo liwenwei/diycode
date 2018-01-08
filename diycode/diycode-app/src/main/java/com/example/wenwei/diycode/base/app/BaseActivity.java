@@ -22,12 +22,14 @@ import com.example.wenwei.diycode_sdk.api.Diycode;
 import java.io.Serializable;
 import java.security.Key;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 public abstract class BaseActivity extends SwipeBackActivity {
 
     protected Diycode mDiycode;
     protected ViewHolder mViewHolder;
+    protected SwipeBackLayout mSwipeBackLayout;
     private Toast mToast;
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -41,6 +43,10 @@ public abstract class BaseActivity extends SwipeBackActivity {
         initActionBar(mViewHolder);
         initDatas();
         initViews(mViewHolder, mViewHolder.getRootView());
+
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+        mSwipeBackLayout.setEnableGesture(false);
     }
 
     @LayoutRes
@@ -154,4 +160,13 @@ public abstract class BaseActivity extends SwipeBackActivity {
         intent.putExtra(key, value);
         context.startActivity(intent);
     }
+
+    /**
+     * 是否允许滑动手势来关闭Activity
+     * @param enable true
+     */
+    protected void setEnableSwipeGesture(boolean enable) {
+        mSwipeBackLayout.setEnableGesture(enable);
+    }
+
 }

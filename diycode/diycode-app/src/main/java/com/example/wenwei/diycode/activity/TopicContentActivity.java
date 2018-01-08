@@ -1,6 +1,5 @@
 package com.example.wenwei.diycode.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,9 +40,10 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.List;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
-
+/**
+ * Topic 新闻内容详情页，包括新闻内容和新闻评论
+ */
 public class TopicContentActivity extends BaseActivity implements View.OnClickListener {
     public static String TOPIC = "topic";
     public static String TOPIC_ID = "topic_id";
@@ -58,14 +58,10 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     private EditText myReply;
 
-    private SwipeBackLayout mSwipeBackLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_topic_content);
-        mSwipeBackLayout = getSwipeBackLayout();
-        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+        setEnableSwipeGesture(true);
     }
 
     public static void newInstance(@NonNull Context context, @NonNull Topic topic) {
@@ -86,7 +82,9 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         return R.layout.activity_topic_content;
     }
 
-    // 初始化数据
+    /**
+     * 初始化数据
+     */
     @Override
     protected void initDatas() {
         Intent intent = getIntent();
@@ -126,7 +124,11 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         mMarkdownView.setWebViewClient(mWebViewClient);
     }
 
-    // 在 start 和 restart 调用
+    /**
+     * 在 start 和 restart 调用
+     *
+     * @param holder ViewHolder
+     */
     private void initReply(ViewHolder holder) {
         if (!mDiycode.isLogin()) {
             holder.get(R.id.need_login).setVisibility(View.VISIBLE);
@@ -140,8 +142,11 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         }
     }
 
-    // 初始化 topic 内容面板的数据
-    @SuppressLint({"AddJavascriptInterface", "JavascriptInterface"})
+    /**
+     * 初始化 topic 内容面板的数据
+     *
+     * @param holder ViewHolder
+     */
     private void loadData(ViewHolder holder) {
         if (null != topic) {
             showPreview(topic);
@@ -201,6 +206,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     /**
      * 绑定基础数据
+     *
      * @param topic Topic bean
      */
     private void showPreview(Topic topic) {
@@ -216,6 +222,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     /**
      * 绑定基础数据
+     *
      * @param topic TopicContent bean
      */
     private void showPreview(TopicContent topic) {
@@ -229,7 +236,11 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         holder.setOnClickListener(this, R.id.avatar, R.id.username);
     }
 
-    // 显示全部数据
+    /**
+     * 显示全部数据
+     *
+     * @param topic TopicContent
+     */
     private void showAll(TopicContent topic) {
         showPreview(topic);
         mMarkdownView.setMarkDownText(topic.getBody());
@@ -267,7 +278,9 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         }
     }
 
-    // 防止 WebView 引起的内存泄漏
+    /**
+     * 防止 WebView 引起的内存泄漏
+     */
     public void clearWebViewResource() {
         if (mMarkdownView != null) {
             mMarkdownView.clearHistory();
