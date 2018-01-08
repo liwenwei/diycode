@@ -50,9 +50,13 @@
                     android:layout_height="@dimen/panel_space_2"
                     android:layout_marginLeft="8dp"
                     android:layout_toRightOf="@+id/avatar"
+                    android:layout_toLeftOf="@+id/time"
                     android:gravity="center_vertical"
                     android:textSize="@dimen/panel_text_2"
-                    tools:text="diytest"/>
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    tools:text="username"/>
 
                 <TextView
                     android:id="@+id/point"

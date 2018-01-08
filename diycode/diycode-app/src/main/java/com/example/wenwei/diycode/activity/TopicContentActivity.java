@@ -199,7 +199,10 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         return false;
     }
 
-    // 显示基础数据
+    /**
+     * 绑定基础数据
+     * @param topic Topic bean
+     */
     private void showPreview(Topic topic) {
         ViewHolder holder = getViewHolder();
         User user = topic.getUser();
@@ -211,7 +214,10 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         holder.setOnClickListener(this, R.id.avatar, R.id.username);
     }
 
-    // 显示基础数据
+    /**
+     * 绑定基础数据
+     * @param topic TopicContent bean
+     */
     private void showPreview(TopicContent topic) {
         ViewHolder holder = getViewHolder();
         User user = topic.getUser();
