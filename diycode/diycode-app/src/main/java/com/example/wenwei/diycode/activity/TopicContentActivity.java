@@ -63,7 +63,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_content);
+        // setContentView(R.layout.activity_topic_content);
         mSwipeBackLayout = getSwipeBackLayout();
         mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
     }
@@ -91,7 +91,6 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     protected void initDatas() {
         Intent intent = getIntent();
         topic_id = intent.getIntExtra(TOPIC_ID, -1);
-        topic_id = 1082;
         topic = (Topic) intent.getSerializableExtra(TOPIC);
         if (topic != null && topic_id <= 0) {
             topic_id = topic.getId();
