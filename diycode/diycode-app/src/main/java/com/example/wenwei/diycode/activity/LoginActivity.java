@@ -1,5 +1,6 @@
 package com.example.wenwei.diycode.activity;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -89,7 +90,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 mDiycode.login(name, pwd);
                 break;
             case R.id.sign_up:
-                IntentUtil.openUrl(this, "https://www.diycode.cc/account/sign_up");
+                startActivity(new Intent(this, WebActivity.class)
+                        .putExtra(WebActivity.URL, "https://www.diycode.cc/account/sign_up"));
                 break;
         }
     }
