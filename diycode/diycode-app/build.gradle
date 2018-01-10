@@ -37,6 +37,7 @@ dependencies {
     implementation 'com.romandanylyk:pageindicatorview:0.1.2@aar'
     implementation 'org.jsoup:jsoup:1.11.2'
     implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+    implementation 'com.just.agentweb:agentweb:3.0.0'
 
     // Report Crash
     implementation 'com.tencent.bugly:crashreport:latest.release'

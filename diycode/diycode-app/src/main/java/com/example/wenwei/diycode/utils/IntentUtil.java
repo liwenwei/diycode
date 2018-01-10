@@ -29,6 +29,21 @@ public class IntentUtil {
     }
 
     /**
+     * 分享链接
+     *
+     * @param context 上下文
+     * @param subject 主题
+     * @param url     要分享的链接
+     */
+    public static void shareUrl(Context context, String subject, String url) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, url);
+        shareIntent.setType("text/plain");
+        context.startActivity(shareIntent);
+    }
+
+    /**
      * 打开支付宝
      */
     public static void openAlipay(Context context) {

@@ -2,6 +2,7 @@ package com.example.wenwei.diycode.fragment.provider;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.UserActivity;
+import com.example.wenwei.diycode.activity.WebActivity;
 import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode.utils.TimeUtil;
 import com.example.wenwei.diycode.utils.UrlUtil;
@@ -60,7 +62,8 @@ public class NewsProvider extends BaseViewProvider<New> {
         holder.get(R.id.item).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IntentUtil.openUrl(mContext, bean.getAddress());
+                mContext.startActivity(new Intent(mContext, WebActivity.class)
+                        .putExtra(WebActivity.URL, bean.getAddress()));
             }
         });
     }

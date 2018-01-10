@@ -20,6 +20,7 @@ import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.base.webview.GcsMarkdownViewClient;
 import com.example.wenwei.diycode.base.webview.WebImageListener;
 import com.example.wenwei.diycode.utils.DataCache;
+import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode.utils.NetUtil;
 import com.example.wenwei.diycode.utils.RecyclerViewUtil;
 import com.example.wenwei.diycode.utils.TimeUtil;
@@ -364,11 +365,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         switch (item.getItemId()) {
             case R.id.action_share:
                 String mUrl = "https://www.diycode.cc/topics/" + topic.getId();
-                Intent shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT, topic.getTitle());
-                shareIntent.putExtra(Intent.EXTRA_TEXT, mUrl);
-                shareIntent.setType("text/plain");
-                startActivity(shareIntent);
+                IntentUtil.shareUrl(this, topic.getTitle(), mUrl);
                 break;
         }
         return super.onOptionsItemSelected(item);
