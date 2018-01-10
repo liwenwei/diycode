@@ -1,6 +1,5 @@
 package com.example.wenwei.diycode.activity;
 
-import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Menu;
@@ -52,7 +51,7 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_webview, menu);
+        getMenuInflater().inflate(R.menu.menu_webview, menu);
         return true;
     }
 

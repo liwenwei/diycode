@@ -40,8 +40,6 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
-import me.imid.swipebacklayout.lib.SwipeBackLayout;
-
 /**
  * Topic 新闻内容详情页，包括新闻内容和新闻评论
  */
@@ -356,7 +354,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.topic_content, menu);
+        getMenuInflater().inflate(R.menu.menu_topic_content, menu);
         return true;
     }
 
