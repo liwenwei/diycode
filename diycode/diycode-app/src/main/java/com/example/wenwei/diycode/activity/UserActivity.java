@@ -35,7 +35,13 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.List;
 
 import static com.example.wenwei.diycode.R.id.recycler_view;
-import static com.github.florent37.expectanim.core.Expectations.*;
+import static com.github.florent37.expectanim.core.Expectations.alpha;
+import static com.github.florent37.expectanim.core.Expectations.height;
+import static com.github.florent37.expectanim.core.Expectations.leftOfParent;
+import static com.github.florent37.expectanim.core.Expectations.sameCenterVerticalAs;
+import static com.github.florent37.expectanim.core.Expectations.scale;
+import static com.github.florent37.expectanim.core.Expectations.toRightOf;
+import static com.github.florent37.expectanim.core.Expectations.topOfParent;
 
 
 public class UserActivity extends BaseActivity implements View.OnClickListener {

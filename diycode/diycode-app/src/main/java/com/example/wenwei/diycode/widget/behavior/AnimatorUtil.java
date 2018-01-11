@@ -13,8 +13,12 @@ public class AnimatorUtil {
 
     private static AccelerateInterpolator LINER_INTERPOLATOR = new AccelerateInterpolator();
 
-
-    // 显示view
+    /**
+     * 通过中心放大动画显示view
+     *
+     * @param view                         视图
+     * @param viewPropertyAnimatorListener An animation listener receives notifications from an animation
+     */
     public static void scaleShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         view.setVisibility(View.VISIBLE);
         ViewCompat.animate(view)
@@ -27,7 +31,12 @@ public class AnimatorUtil {
                 .start();
     }
 
-    // 隐藏view
+    /**
+     * 通过中心放大动画隐藏view
+     *
+     * @param view                         视图
+     * @param viewPropertyAnimatorListener An animation listener receives notifications from an animation
+     */
     public static void scaleHide(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         ViewCompat.animate(view)
                 .scaleX(0.0f)
@@ -39,7 +48,12 @@ public class AnimatorUtil {
                 .start();
     }
 
-    // 显示view
+    /**
+     * 通过移动动画显示View
+     *
+     * @param view                         视图
+     * @param viewPropertyAnimatorListener An animation listener receives notifications from an animation
+     */
     public static void translateShow(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         view.setVisibility(View.VISIBLE);
         ViewCompat.animate(view)
@@ -50,7 +64,12 @@ public class AnimatorUtil {
                 .start();
     }
 
-    // 隐藏view
+    /**
+     * 通过移动动画显示隐藏view
+     *
+     * @param view                         视图
+     * @param viewPropertyAnimatorListener An animation listener receives notifications from an animation
+     */
     public static void translateHide(View view, ViewPropertyAnimatorListener viewPropertyAnimatorListener) {
         view.setVisibility(View.VISIBLE);
         ViewCompat.animate(view)

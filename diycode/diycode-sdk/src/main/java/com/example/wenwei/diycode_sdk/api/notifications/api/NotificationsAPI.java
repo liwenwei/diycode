@@ -3,7 +3,11 @@ package com.example.wenwei.diycode_sdk.api.notifications.api;
 
 import android.support.annotation.NonNull;
 
-import com.example.wenwei.diycode_sdk.api.notifications.event.*;
+import com.example.wenwei.diycode_sdk.api.notifications.event.DeleteAllNotificationEvent;
+import com.example.wenwei.diycode_sdk.api.notifications.event.DeleteNotificationEvent;
+import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationUnReadCountEvent;
+import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationsListEvent;
+import com.example.wenwei.diycode_sdk.api.notifications.event.MarkNotificationAsReadEvent;
 
 public interface NotificationsAPI {
 

@@ -22,7 +22,6 @@
 
 package com.github.florent37.expectanim.core.scale;
 
-import android.support.annotation.Nullable;
 import android.view.View;
 
 /**

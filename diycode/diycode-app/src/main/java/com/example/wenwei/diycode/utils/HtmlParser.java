@@ -4,9 +4,6 @@ package com.example.wenwei.diycode.utils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class HtmlParser {
 
     /**

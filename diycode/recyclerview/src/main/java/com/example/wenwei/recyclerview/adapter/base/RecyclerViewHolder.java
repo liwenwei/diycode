@@ -2,7 +2,6 @@ package com.example.wenwei.recyclerview.adapter.base;
 
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.TextView;

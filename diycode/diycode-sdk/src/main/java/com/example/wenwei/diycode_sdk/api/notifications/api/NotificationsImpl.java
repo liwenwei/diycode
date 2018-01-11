@@ -4,19 +4,14 @@ package com.example.wenwei.diycode_sdk.api.notifications.api;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.example.wenwei.diycode_sdk.api.base.bean.State;
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
-import com.example.wenwei.diycode_sdk.api.notifications.bean.Count;
-import com.example.wenwei.diycode_sdk.api.notifications.bean.Notification;
 import com.example.wenwei.diycode_sdk.api.notifications.event.DeleteAllNotificationEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.DeleteNotificationEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationUnReadCountEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationsListEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.MarkNotificationAsReadEvent;
 import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
-
-import java.util.List;
 
 public class NotificationsImpl extends BaseImpl<NotificationsService> implements NotificationsAPI {
 

@@ -10,7 +10,6 @@ import com.bumptech.glide.Glide;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.WebActivity;
 import com.example.wenwei.diycode.fragment.bean.SiteItem;
-import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.recyclerview.adapter.base.RecyclerViewHolder;
 import com.example.wenwei.recyclerview.adapter.multitype.BaseViewProvider;
 

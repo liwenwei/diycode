@@ -3,7 +3,14 @@ package com.example.wenwei.diycode_sdk.api.news.api;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.example.wenwei.diycode_sdk.api.news.event.*;
+import com.example.wenwei.diycode_sdk.api.news.event.CreateNewsEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.CreateNewsReplyEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.DeleteNewsReplyEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.GetNewsListEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.GetNewsNodesListEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.GetNewsRepliesListEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.GetNewsReplyEvent;
+import com.example.wenwei.diycode_sdk.api.news.event.UpdateNewsReplyEvent;
 
 public interface NewsAPI {
 

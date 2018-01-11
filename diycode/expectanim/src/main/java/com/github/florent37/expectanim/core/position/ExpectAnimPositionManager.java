@@ -24,11 +24,10 @@ package com.github.florent37.expectanim.core.position;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.github.florent37.expectanim.core.AnimExpectation;
 import com.github.florent37.expectanim.ViewCalculator;
+import com.github.florent37.expectanim.core.AnimExpectation;
 import com.github.florent37.expectanim.core.ExpectAnimManager;
 
 import java.util.ArrayList;

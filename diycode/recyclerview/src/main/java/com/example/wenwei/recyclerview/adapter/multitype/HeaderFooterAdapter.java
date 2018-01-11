@@ -1,6 +1,5 @@
 package com.example.wenwei.recyclerview.adapter.multitype;
 
-import android.animation.ObjectAnimator;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;

@@ -1,8 +1,6 @@
 package com.example.wenwei.diycode_sdk.api.notifications.api;
 
 
-import android.support.annotation.NonNull;
-
 import com.example.wenwei.diycode_sdk.api.base.bean.State;
 import com.example.wenwei.diycode_sdk.api.notifications.bean.Count;
 import com.example.wenwei.diycode_sdk.api.notifications.bean.Notification;

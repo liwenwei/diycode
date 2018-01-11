@@ -7,20 +7,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.hackpatch.IMMLeaks;
 import com.example.wenwei.diycode_sdk.api.Diycode;
 
 import java.io.Serializable;
-import java.security.Key;
 
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;

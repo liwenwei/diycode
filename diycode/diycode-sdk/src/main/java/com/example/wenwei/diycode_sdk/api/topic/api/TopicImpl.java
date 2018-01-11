@@ -28,7 +28,21 @@ import android.support.annotation.Nullable;
 
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
-import com.example.wenwei.diycode_sdk.api.topic.event.*;
+import com.example.wenwei.diycode_sdk.api.topic.event.BanTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.CollectionTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.CreateTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.CreateTopicReplyEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.DeleteTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.DeleteTopicReplyEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.GetTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.GetTopicRepliesListEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.GetTopicReplyEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.GetTopicsListEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.UnCollectionTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.UnWatchTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.UpdateTopicEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.UpdateTopicReplyEvent;
+import com.example.wenwei.diycode_sdk.api.topic.event.WatchTopicEvent;
 import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
 
 public class TopicImpl extends BaseImpl<TopicService> implements TopicAPI {

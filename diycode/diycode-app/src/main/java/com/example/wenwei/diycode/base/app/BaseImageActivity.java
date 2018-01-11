@@ -2,7 +2,6 @@ package com.example.wenwei.diycode.base.app;
 
 
 import android.content.Intent;
-import android.view.View;
 
 import java.util.ArrayList;
 

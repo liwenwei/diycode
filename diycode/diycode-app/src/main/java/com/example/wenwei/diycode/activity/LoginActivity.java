@@ -10,8 +10,6 @@ import android.widget.EditText;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
-import com.example.wenwei.diycode.utils.IntentUtil;
-import com.example.wenwei.diycode_sdk.api.Diycode;
 import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
 import com.example.wenwei.diycode_sdk.log.Logger;
 

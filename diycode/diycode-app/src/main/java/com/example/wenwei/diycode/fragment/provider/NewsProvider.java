@@ -12,7 +12,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.UserActivity;
 import com.example.wenwei.diycode.activity.WebActivity;
-import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode.utils.TimeUtil;
 import com.example.wenwei.diycode.utils.UrlUtil;
 import com.example.wenwei.diycode_sdk.api.news.bean.New;

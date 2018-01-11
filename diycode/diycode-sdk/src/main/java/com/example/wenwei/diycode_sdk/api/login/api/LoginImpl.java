@@ -8,7 +8,11 @@ import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.callback.TokenCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
-import com.example.wenwei.diycode_sdk.api.login.event.*;
+import com.example.wenwei.diycode_sdk.api.login.event.DeleteDevicesEvent;
+import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
+import com.example.wenwei.diycode_sdk.api.login.event.LogoutEvent;
+import com.example.wenwei.diycode_sdk.api.login.event.RefreshTokenEvent;
+import com.example.wenwei.diycode_sdk.api.login.event.UpdateDevicesEvent;
 import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
 
 import org.greenrobot.eventbus.EventBus;

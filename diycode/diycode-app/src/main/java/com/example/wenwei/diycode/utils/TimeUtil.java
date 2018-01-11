@@ -1,8 +1,6 @@
 package com.example.wenwei.diycode.utils;
 
 
-import android.os.SystemClock;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

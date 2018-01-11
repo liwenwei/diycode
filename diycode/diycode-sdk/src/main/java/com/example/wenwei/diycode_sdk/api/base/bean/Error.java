@@ -1,8 +1,6 @@
 package com.example.wenwei.diycode_sdk.api.base.bean;
 
 
-import java.io.Serializable;
-
 /**
  * error : Access Token 无效
  */

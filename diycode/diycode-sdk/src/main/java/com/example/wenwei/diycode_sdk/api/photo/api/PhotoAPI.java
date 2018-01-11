@@ -2,7 +2,7 @@ package com.example.wenwei.diycode_sdk.api.photo.api;
 
 import android.support.annotation.NonNull;
 
-import com.example.wenwei.diycode_sdk.api.photo.event.*;
+import com.example.wenwei.diycode_sdk.api.photo.event.UploadPhotoEvent;
 
 import java.io.File;
 

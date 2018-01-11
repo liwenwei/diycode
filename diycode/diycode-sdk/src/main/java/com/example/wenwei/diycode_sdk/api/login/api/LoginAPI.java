@@ -4,7 +4,8 @@ package com.example.wenwei.diycode_sdk.api.login.api;
 import android.support.annotation.NonNull;
 
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
-import com.example.wenwei.diycode_sdk.api.login.event.*;
+import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
+import com.example.wenwei.diycode_sdk.api.login.event.RefreshTokenEvent;
 
 public interface LoginAPI {
 

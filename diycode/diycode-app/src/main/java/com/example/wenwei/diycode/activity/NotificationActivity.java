@@ -2,7 +2,6 @@ package com.example.wenwei.diycode.activity;
 
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
 import com.example.wenwei.diycode.R;

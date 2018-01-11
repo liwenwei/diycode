@@ -7,7 +7,8 @@ import android.support.annotation.NonNull;
 import com.example.wenwei.diycode_sdk.api.base.bean.State;
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
-import com.example.wenwei.diycode_sdk.api.likes.event.*;
+import com.example.wenwei.diycode_sdk.api.likes.event.LikeEvent;
+import com.example.wenwei.diycode_sdk.api.likes.event.UnLikeEvent;
 import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
 
 public class LikesImpl extends BaseImpl<LikesService> implements LikesAPI {

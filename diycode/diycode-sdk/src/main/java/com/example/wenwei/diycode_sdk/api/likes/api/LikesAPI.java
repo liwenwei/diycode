@@ -3,7 +3,8 @@ package com.example.wenwei.diycode_sdk.api.likes.api;
 
 import android.support.annotation.NonNull;
 
-import com.example.wenwei.diycode_sdk.api.likes.event.*;
+import com.example.wenwei.diycode_sdk.api.likes.event.LikeEvent;
+import com.example.wenwei.diycode_sdk.api.likes.event.UnLikeEvent;
 
 public interface LikesAPI {
 

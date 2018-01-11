@@ -24,8 +24,6 @@ package com.github.florent37.expectanim.core.scale;
 
 import android.view.View;
 
-import com.github.florent37.expectanim.core.position.PositionAnimExpectation;
-
 /**
  * Created by florentchampigny on 20/02/2017.
  */

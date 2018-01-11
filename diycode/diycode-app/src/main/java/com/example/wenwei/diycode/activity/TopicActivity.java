@@ -4,14 +4,12 @@ package com.example.wenwei.diycode.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.fragment.NodeTopicListFragment;
-import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
 
 
 /**
