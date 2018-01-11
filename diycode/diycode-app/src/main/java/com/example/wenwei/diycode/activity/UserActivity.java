@@ -124,7 +124,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         NestedScrollView scrollView = holder.get(R.id.scroll_view);
         ImageView avatar = holder.get(R.id.avatar);
         TextView username = holder.get(R.id.username);
-        View backbground = holder.get(R.id.background);
+        View background = holder.get(R.id.background);
 
         this.expectAnimMove = new ExpectAnim()
                 .expect(avatar)
@@ -139,9 +139,9 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
                         sameCenterVerticalAs(avatar),
                         alpha(0.5f)
                 )
-                .expect(backbground)
+                .expect(background)
                 .toBe(
-                        height(DensityUtils.dip2px(this, 60)).withGravity(Gravity.LEFT, Gravity.TOP)
+                        height(DensityUtils.dip2px(this, 60)).withGravity(Gravity.START, Gravity.TOP)
                 )
                 .toAnimation();
 
