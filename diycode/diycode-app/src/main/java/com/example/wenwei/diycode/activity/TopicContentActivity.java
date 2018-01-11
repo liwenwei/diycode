@@ -174,7 +174,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         TopicContent topicContent = mDataCache.getTopicContent(topic.getId());
         if (null != topicContent) {
             Logger.i("数据不变 - 来自缓存");
-            mMarkdownView.setMarkDownText(topicContent.getBody());
+            mMarkdownView.setMarkDownText(this, topicContent.getBody());
         } else {
             mDiycode.getTopic(topic.getId());
         }
@@ -242,7 +242,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
      */
     private void showAll(TopicContent topic) {
         showPreview(topic);
-        mMarkdownView.setMarkDownText(topic.getBody());
+        mMarkdownView.setMarkDownText(this, topic.getBody());
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

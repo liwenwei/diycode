@@ -7,4 +7,7 @@
     <issue id="AppCompatCustomView" severity="error">
         <ignore path="src/main/java/com/example/wenwei/diycode/widget/CircleImageView.java" />
     </issue>
+    <issue id="SetJavaScriptEnabled" severity="error">
+        <ignore path="src/main/java/com/example/wenwei/diycode/widget/MarkdownView.java" />
+    </issue>
 </lint>

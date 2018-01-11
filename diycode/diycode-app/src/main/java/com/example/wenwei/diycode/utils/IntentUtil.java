@@ -6,11 +6,11 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.wenwei.diycode.activity.WebActivity;
 import com.example.wenwei.diycode.utils.customtabs.CustomTabsHelper;
 
 
 public class IntentUtil {
-
 
     /**
      * 打开链接
@@ -26,6 +26,23 @@ public class IntentUtil {
             return;
         }
         CustomTabsHelper.openUrl(context, url);
+    }
+
+    /**
+     * 在应用内通过webview打开链接
+     * 根据设置判断是用那种方式打开
+     *
+     * @param context 上下文
+     * @param url     url
+     */
+    public static void openUrlWithinApp(Context context, String url) {
+        if (null == url || url.isEmpty()) {
+            Log.i("Diyocde", "Url地址错误");
+            return;
+        }
+        Intent intent = new Intent(context, WebActivity.class);
+        intent.putExtra(WebActivity.URL, url);
+        context.startActivity(intent);
     }
 
     /**
