@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseImageActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
-import com.example.wenwei.diycode.base.webview.DiskImageCache;
+import com.example.wenwei.diycode.markdownview.DiskImageCache;
 import com.example.wenwei.diycode_sdk.log.Logger;
 
 public class ImageActivity extends BaseImageActivity {

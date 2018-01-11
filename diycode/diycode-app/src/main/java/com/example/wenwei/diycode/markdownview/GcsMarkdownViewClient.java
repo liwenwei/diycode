@@ -1,9 +1,8 @@
-package com.example.wenwei.diycode.base.webview;
+package com.example.wenwei.diycode.markdownview;
 
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -17,7 +16,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.example.wenwei.diycode.activity.WebActivity;
+import com.example.wenwei.diycode.markdownview.DiskImageCache;
 import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode_sdk.log.Logger;
 

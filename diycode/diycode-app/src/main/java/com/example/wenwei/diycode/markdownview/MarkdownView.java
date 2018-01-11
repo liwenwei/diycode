@@ -1,9 +1,7 @@
-package com.example.wenwei.diycode.widget;
+package com.example.wenwei.diycode.markdownview;
 
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -11,12 +9,8 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-
-import com.example.wenwei.diycode.activity.WebActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
