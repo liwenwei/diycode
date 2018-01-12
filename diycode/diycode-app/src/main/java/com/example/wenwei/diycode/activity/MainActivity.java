@@ -287,7 +287,7 @@ public class MainActivity extends BaseActivity implements
             } else {
                 openActivity(LoginActivity.class);
             }
-			return true;
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -295,18 +295,26 @@ public class MainActivity extends BaseActivity implements
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+
+        UserDetail me = mCache.getMe();
+        if (me == null) {
+            Logger.e("获取自己缓存失效");
+            mDiycode.getMe();
+            return false;
+        }
+
         if (id == R.id.nav_post) {
             if (!mDiycode.isLogin()) {
                 openActivity(LoginActivity.class);
                 return true;
             }
-            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_TOPIC);
+            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_TOPIC, me.getLogin());
         } else if (id == R.id.nav_collect) {
             if (!mDiycode.isLogin()) {
                 openActivity(LoginActivity.class);
                 return true;
             }
-            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_COLLECT);
+            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_COLLECT, me.getLogin());
         } else if (id == R.id.nav_about) {
             openActivity(AboutActivity.class);
         } else if (id == R.id.nav_setting) {
