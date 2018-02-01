@@ -27,10 +27,11 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     private static final String FILE_NAME = "crash";
     private static final String FILE_NAME_SUFFIX = ".trace";  // log文件的后缀名
 
+    private String mPackageVersionName;
+    private int mPackageVersionCode;
+
     // 系统默认的异常处理（默认情况下，系统会终止当前的异常程序）
     private Thread.UncaughtExceptionHandler mDefaultCrashHandler;
-
-    private Context mContext;
 
     private static CrashHandler sInstance = new CrashHandler();
 
@@ -55,7 +56,16 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         // 将当前实例设为系统默认的异常处理器
         Thread.setDefaultUncaughtExceptionHandler(this);
         // 获取Context，方便内部使用
-        mContext = context.getApplicationContext();
+        Context mContext = context.getApplicationContext();
+        try {
+            // 应用的版本名称和版本号
+            PackageManager pm = mContext.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(mContext.getPackageName(), PackageManager.GET_ACTIVITIES);
+            mPackageVersionName = pi.versionName;
+            mPackageVersionCode = pi.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, "Not found the version name of this package");
+        }
     }
 
     /**
@@ -67,7 +77,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         try {
             dumpExceptionToSDCard(e);
             uploadExceptionToServer(); // 这里可以通过网络上传异常信息到服务器，便于开发人员分析日志从而解决bug
-        } catch(Throwable ex) {
+        } catch (Throwable ex) {
             e.printStackTrace();
         }
 
@@ -84,6 +94,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
     /**
      * 导出异常信息到SD卡中
+     *
      * @param ex Exception
      * @throws FileNotFoundException
      */
@@ -126,9 +137,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
     private void dumpDeviceInfo(PrintWriter pw) throws PackageManager.NameNotFoundException {
         // 应用的版本名称和版本号
-        PackageManager pm = mContext.getPackageManager();
-        PackageInfo pi = pm.getPackageInfo(mContext.getPackageName(), PackageManager.GET_ACTIVITIES);
-        pw.println("App Version: " + pi.versionName + "_" + pi.versionCode);
+        pw.println("App Version: " + mPackageVersionName + "_" + mPackageVersionCode);
 
         // Android版本号
         pw.println("OS Version: " + Build.VERSION.RELEASE + "_" + Build.VERSION.SDK_INT);
