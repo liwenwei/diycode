@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.example.wenwei.diycode.markdownview.DiskImageCache;
 import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode_sdk.log.Logger;
 

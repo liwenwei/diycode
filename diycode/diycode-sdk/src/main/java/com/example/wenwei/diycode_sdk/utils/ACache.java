@@ -367,6 +367,7 @@ public class ACache {
             try {
                 oos.close();
             } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

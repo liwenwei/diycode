@@ -13,11 +13,7 @@ import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.fragment.UserCollectionTopicFragment;
 import com.example.wenwei.diycode.fragment.UserCreateTopicFragment;
-import com.example.wenwei.diycode.utils.DataCache;
 import com.example.wenwei.diycode_sdk.api.Diycode;
-import com.example.wenwei.diycode_sdk.api.user.bean.UserDetail;
-
-import java.io.IOException;
 
 public class MyTopicActivity extends BaseActivity {
     private static final String USER_NAME = "user_name";
