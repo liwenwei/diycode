@@ -3,6 +3,8 @@
     <issue id="all" severity="error">
         <ignore path="src/androidTest" />
         <ignore path="src/test" />
+        <ignore path="src/main/java/com/example/wenwei/diycode/test" />
+        <ignore path="src/main/res/layout/fragment_refresh_recycler_test.xml" />
     </issue>
     <issue id="AppCompatCustomView" severity="error">
         <ignore path="src/main/java/com/example/wenwei/diycode/widget/CircleImageView.java" />
