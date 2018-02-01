@@ -59,7 +59,6 @@ public class ViewExpectation {
     private Float willHasRotationX;
 
     private Float willHaveRotationX, willHaveRotationY;
-    private Float willHaveCameraDistance;
 
     ViewExpectation(ExpectAnim expectAnim, View viewToMove) {
         this.expectAnim = expectAnim;
@@ -115,7 +114,7 @@ public class ViewExpectation {
             // camera distance animations
             final ExpectAnimCameraDistanceManager cameraDistanceManager = new ExpectAnimCameraDistanceManager(animExpectations, viewToMove, viewCalculator);
             cameraDistanceManager.calculate();
-            willHaveCameraDistance = cameraDistanceManager.getCameraDistance();
+            Float willHaveCameraDistance = cameraDistanceManager.getCameraDistance();
             animations.addAll(cameraDistanceManager.getAnimators());
 
         }

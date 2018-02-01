@@ -21,13 +21,18 @@ import com.example.wenwei.recyclerview.adapter.multitype.BaseViewProvider;
 
 public class NotificationsProvider extends BaseViewProvider<Notification> {
     // TODO: Extract the redundant variables
-    private static String TYPE_NodeChanged = "NodeChanged";             // 节点变更
     private static String TYPE_TopicReply = "TopicReply";               // Topic 回复
-    private static String TYPE_NewsReply = "Hacknews";                  // News  回复
     private static String TYPE_Mention = "Mention";                     // 有人提及
+    /*
+    private static String TYPE_NodeChanged = "NodeChanged";             // 节点变更
+    private static String TYPE_NewsReply = "Hacknews";                  // News  回复
+    */
+
     private static String MENTION_TYPE_TopicReply = "Reply";            // - Topic 回复中提及
+    /*
     private static String MENTION_TYPE_NewReply = "HacknewsReply";      // - News  回复中提及
     private static String MENTION_TYPE_ProjectReply = "ProjectReply";   // - 项目   回复中提及
+    */
 
     public NotificationsProvider(@NonNull Context context) {
         super(context, R.layout.item_notification);

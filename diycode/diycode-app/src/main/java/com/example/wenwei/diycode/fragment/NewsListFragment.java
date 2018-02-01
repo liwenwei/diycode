@@ -74,6 +74,7 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
         // TODO: 排除重复数据
         super.onLoadMore(event, adapter);
         mDataCache.saveNewsListObj(adapter.getDatas());
+        Logger.d(TAG, "onLoadMore");
     }
 
     @Override

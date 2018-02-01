@@ -22,7 +22,6 @@ import java.io.IOException;
 public class MyTopicActivity extends BaseActivity {
     private static final String USER_NAME = "user_name";
     private static final String TYPE = "type";
-    private DataCache mCache;
 
     // 数据类型
     enum InfoType {
@@ -47,7 +46,6 @@ public class MyTopicActivity extends BaseActivity {
     @Override
     protected void initDatas() {
         mDiycode = Diycode.getSingleInstance();
-        mCache = new DataCache(this);
 
         Intent intent = getIntent();
         InfoType type = (InfoType) intent.getSerializableExtra(TYPE);

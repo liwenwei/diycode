@@ -53,8 +53,6 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     private DataCache mDataCache;
     private TopicReplyAdapter mAdapter;
     private MarkdownView mMarkdownView;
-    private GcsMarkdownViewClient mWebViewClient;
-
     private EditText myReply;
 
     @Override
@@ -119,8 +117,8 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
         WebImageListener listener = new WebImageListener(this, ImageActivity.class);
         mMarkdownView.addJavascriptInterface(listener, "listener");
-        mWebViewClient = new GcsMarkdownViewClient(this);
-        mMarkdownView.setWebViewClient(mWebViewClient);
+        GcsMarkdownViewClient webViewClient = new GcsMarkdownViewClient(this);
+        mMarkdownView.setWebViewClient(webViewClient);
     }
 
     /**

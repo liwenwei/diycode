@@ -21,13 +21,12 @@ import java.util.List;
  * 数据缓存工具
  */
 public class DataCache {
-    private static int M = 1024 * 1024;
     ACache mDiskCache;
     LruCache<String, Object> mLruCache;
 
     public DataCache(Context context) {
         mDiskCache = ACache.get(new File(FileUtil.getExternalCacheDir(context.getApplicationContext(), "diy-data")));
-        mLruCache = new LruCache<>(5 * M);
+        mLruCache = new LruCache<>(5 * 1024 * 1024);
     }
 
     public <T extends Serializable> void saveListData(String key, List<T> data) {

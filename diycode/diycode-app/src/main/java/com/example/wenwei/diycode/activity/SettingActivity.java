@@ -15,7 +15,6 @@ import com.example.wenwei.diycode.utils.IntentUtil;
 import java.io.File;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener {
-    private Config mConfig;
 
     @Override
     protected int getLayoutId() {
@@ -25,7 +24,6 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void initViews(ViewHolder holder, View root) {
         setTitle("设置");
-        mConfig = Config.getSingleInstance();
         showCacheSize(holder);
 
         String versionName = AppUtil.getVersionName(this);

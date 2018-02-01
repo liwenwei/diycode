@@ -6,8 +6,6 @@ import android.util.Log;
 
 public class Logger {
 
-    private static String DEFAULT_TAG = "DIYCODE-LOG";
-
     private static Config sConfig;
 
     private Logger() {
@@ -15,6 +13,7 @@ public class Logger {
     }
 
     public static Config init() {
+        String DEFAULT_TAG = "DIYCODE-LOG";
         sConfig = new Config(DEFAULT_TAG);
         return sConfig;
     }

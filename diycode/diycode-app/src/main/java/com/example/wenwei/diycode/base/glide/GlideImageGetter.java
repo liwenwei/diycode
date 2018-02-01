@@ -23,7 +23,6 @@ import java.util.Set;
  */
 public final class GlideImageGetter implements Html.ImageGetter, Drawable.Callback {
 
-    private final Context mContext;
     private final TextView mTextView;
     private final Set<ImageGetterViewTarget> mTargets;
 
@@ -41,7 +40,6 @@ public final class GlideImageGetter implements Html.ImageGetter, Drawable.Callba
     }
 
     public GlideImageGetter(Context context, TextView textView) {
-        mContext = context;
         mTextView = textView;
 
         clear();

@@ -70,6 +70,7 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
         // TODO 排除重复数据
         super.onLoadMore(event, adapter);
         mDataCache.saveTopicsListObj(adapter.getDatas());
+        Logger.d(TAG, "onLoadMore");
     }
 
     @Override
