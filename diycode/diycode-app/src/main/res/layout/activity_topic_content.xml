@@ -145,7 +145,6 @@
                 android:id="@+id/reply_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/panel"
                 android:background="@color/diy_white_bg"
                 android:paddingLeft="12dp"
                 android:paddingTop="8dp"
@@ -156,7 +155,6 @@
                 android:id="@+id/reply_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/reply_count"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
             </android.support.v7.widget.RecyclerView>
 
