@@ -46,8 +46,26 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/filter_view_http_diycode">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "https://www.diycode.cc/diycode” -->
+                <data
+                    android:scheme="https"
+                    android:host="www.diycode.cc"
+                    android:pathPrefix="/diycode" />
+            </intent-filter>
+            <intent-filter android:label="@string/filter_view_example_diycode">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "diycode://diycode” -->
+                <data
+                    android:scheme="diycode"
+                    android:host="diycode" />
             </intent-filter>
         </activity>
         <activity
@@ -92,7 +110,7 @@
         </activity>
         <activity
             android:name=".activity.WebActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
