@@ -136,13 +136,13 @@ public class ACache {
         BufferedReader in = null;
         try {
             in = new BufferedReader(new FileReader(file));
-            String readString = "";
+            StringBuilder readString = new StringBuilder();
             String currentLine;
             while ((currentLine = in.readLine()) != null) {
-                readString += currentLine;
+                readString.append(currentLine);
             }
-            if (!Utils.isDue(readString)) {
-                return Utils.clearDateInfo(readString);
+            if (!Utils.isDue(readString.toString())) {
+                return Utils.clearDateInfo(readString.toString());
             } else {
                 removeFile = true;
                 return null;
@@ -759,9 +759,9 @@ public class ACache {
         private static final char mSeparator = ' ';
 
         private static String createDateInfo(int second) {
-            String currentTime = System.currentTimeMillis() + "";
+            StringBuilder currentTime = new StringBuilder(System.currentTimeMillis() + "");
             while (currentTime.length() < 13) {
-                currentTime = "0" + currentTime;
+                currentTime.insert(0, "0");
             }
             return currentTime + "-" + second + mSeparator;
         }
