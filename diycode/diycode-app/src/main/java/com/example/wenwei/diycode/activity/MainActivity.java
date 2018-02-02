@@ -228,14 +228,9 @@ public class MainActivity extends BaseActivity implements
                 public void onClick(View v) {
                     UserDetail me = mCache.getMe();
                     if (me == null) {
-                        try {
-                            me = mDiycode.getMeNow();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    if (me != null) {
+                        toastShort("获取失败，请重新登录");
+                        mDiycode.getMe();
+                    } else {
                         User user = new User();
                         user.setId(me.getId());
                         user.setName(me.getName());

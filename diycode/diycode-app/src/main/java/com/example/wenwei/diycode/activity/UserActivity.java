@@ -75,11 +75,8 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         Intent intent = getIntent();
         User user = (User) intent.getSerializableExtra(USER);
         if (null != user) {
-            setTitle(user.getLogin());
-            holder.setText(R.id.username, user.getName());
-            holder.loadImage(this, user.getAvatar_url(), R.id.avatar);
+            bindContent(holder, user.getLogin(), user.getName(), user.getAvatar_url());
             mDiycode.getUser(user.getLogin());
-        } else {
         }
     }
 
@@ -159,9 +156,9 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
     public void onUser(GetUserEvent event) {
         if (event.isOk()) {
             UserDetail user = event.getBean();
-            mDiycode.getUserCreateTopicList(user.getLogin(), null, 0, user.getTopics_count());
+            bindContent(mViewHolder, user.getLogin(), user.getName(), user.getAvatar_url());
+            getUserCreateTopicList(user.getLogin(), user.getTopics_count());
             Logger.e("返回 user 成功");
-        } else {
         }
     }
 
@@ -188,5 +185,24 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
+    }
+
+    private void getUserCreateTopicList(String loginName, int topicsCount) {
+        mDiycode.getUserCreateTopicList(loginName, null, 0, topicsCount);
+    }
+
+    /**
+     * 绑定页面上的内容
+     *
+     * @param login      登录用户名
+     * @param name       昵称
+     * @param avatar_url 头像链接
+     */
+    private void bindContent(ViewHolder holder, String login, String name, String avatar_url) {
+        setTitle(login);
+        if (null != holder) {
+            holder.setText(R.id.username, name);
+            holder.loadImage(this, avatar_url, R.id.avatar);
+        }
     }
 }
