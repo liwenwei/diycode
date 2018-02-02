@@ -1,5 +1,6 @@
 package com.example.wenwei.diycode.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -49,6 +50,12 @@ public class MainActivity extends BaseActivity implements
     private SitesListFragment mFragment3;
 
     private boolean isToolbarFirstClick = true;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setEnableSwipeGesture(false);
+    }
 
     @Override
     public int getLayoutId() {
