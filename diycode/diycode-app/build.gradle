@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion project.sdk
+    buildToolsVersion project.buildTools
 
     defaultConfig {
         applicationId "com.example.wenwei.diycode"
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion project.minSdk
+        targetSdkVersion project.sdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

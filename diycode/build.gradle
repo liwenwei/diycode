@@ -31,8 +31,8 @@ task clean(type: Delete) {
 
 ext {
     sdk = 25
-    buildTools = "25.0.2"
-    minSdk = 14
+    buildTools = "26.0.2"
+    minSdk = 15
     libraryVersion = "1.0.2"
     supportVersion = "25.1.0"
     mockitoVersion = "2.+"
