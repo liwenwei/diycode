@@ -22,7 +22,6 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setEnableSwipeGesture(true);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.container_webview);
         String url = getIntent().getStringExtra(URL);
         mAgentWeb = AgentWeb.with(this)//传入Activity or Fragment

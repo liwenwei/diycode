@@ -43,7 +43,7 @@ public abstract class BaseActivity extends SwipeBackActivity {
 
         mSwipeBackLayout = getSwipeBackLayout();
         mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-        mSwipeBackLayout.setEnableGesture(false);
+        mSwipeBackLayout.setEnableGesture(true);
     }
 
     @LayoutRes

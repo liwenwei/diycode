@@ -58,7 +58,6 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setEnableSwipeGesture(true);
     }
 
     public static void newInstance(@NonNull Context context, @NonNull Topic topic) {
