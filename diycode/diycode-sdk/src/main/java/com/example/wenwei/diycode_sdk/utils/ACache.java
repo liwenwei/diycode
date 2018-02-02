@@ -36,6 +36,7 @@ public class ACache {
     public static final int TIME_HOUR = 60 * 60;
     public static final int TIME_DAY = TIME_HOUR * 24;
     public static final int TIME_WEEK = TIME_DAY * 7;
+    private static final int MIN_SIZE = 1000 * 1000 * 1; // 1 mb
     private static final int MAX_SIZE = 1000 * 1000 * 50; // 50 mb
     private static final int MAX_COUNT = Integer.MAX_VALUE; // 不限制存放数据的数量
     private static Map<String, ACache> mInstanceMap = new HashMap<String, ACache>();
@@ -46,7 +47,7 @@ public class ACache {
     }
 
     public static ACache get(Context ctx, String cacheName) {
-        File f = new File(ctx.getCacheDir(), cacheName);
+        File f = new File(getCacheDir(ctx), cacheName);
         return get(f, MAX_SIZE, MAX_COUNT);
     }
 
@@ -55,7 +56,7 @@ public class ACache {
     }
 
     public static ACache get(Context ctx, long max_size, int max_count) {
-        File f = new File(ctx.getCacheDir(), "ACache");
+        File f = new File(getCacheDir(ctx), "ACache");
         return get(f, max_size, max_count);
     }
 
@@ -66,6 +67,20 @@ public class ACache {
             mInstanceMap.put(cacheDir.getAbsolutePath() + myPid(), manager);
         }
         return manager;
+    }
+
+    private static String getCacheDir(Context ctx) {
+        String parentFilePath = ctx.getCacheDir().getAbsolutePath();
+        if (StorageUtil.getAvailableInternalStorageSize() > MIN_SIZE) {
+            parentFilePath = ctx.getCacheDir().getAbsolutePath();
+        } else if (StorageUtil.getAvailableExternalStorageSize() > MIN_SIZE) {
+            if (UsesPermission.isExternalStorageWritable()) {
+                parentFilePath = ctx.getExternalCacheDir().getAbsolutePath();
+            } else {
+                throw new RuntimeException("External cache dir not available");
+            }
+        }
+        return parentFilePath;
     }
 
     private static String myPid() {

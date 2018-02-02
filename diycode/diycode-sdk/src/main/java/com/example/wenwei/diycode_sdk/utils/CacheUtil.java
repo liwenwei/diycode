@@ -20,14 +20,21 @@ public class CacheUtil {
 
     //--- token ------------------------------------------------------------------------------------
     public void saveToken(@NonNull Token token) {
-        cache.put(TOKEN_KEY_NAME, token);
+        if (null != cache) {
+            cache.put(TOKEN_KEY_NAME, token);
+        }
     }
 
     public Token getToken() {
-        return (Token) cache.getAsObject(TOKEN_KEY_NAME);
+        if (null != cache) {
+            return (Token) cache.getAsObject(TOKEN_KEY_NAME);
+        }
+        return null;
     }
 
     public void clearToken() {
-        cache.remove(TOKEN_KEY_NAME);
+        if (null != cache) {
+            cache.remove(TOKEN_KEY_NAME);
+        }
     }
 }
