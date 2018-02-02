@@ -1,2 +1,2 @@
 // Tells Gradle which modules it should include when building your app
-include ':diycode-app', ':diycode-sdk', ':recyclerview', ':expectanim'
+include ':diycode-app', ':diycode-sdk', ':recyclerview', ':expectanim', ':utils'
