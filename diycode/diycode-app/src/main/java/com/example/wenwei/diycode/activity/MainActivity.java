@@ -43,7 +43,6 @@ import org.greenrobot.eventbus.ThreadMode;
 public class MainActivity extends BaseActivity implements
         NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     private DataCache mCache;
-    private Config mConfig;
     private int mCurrentPosition = 0;
     private TopicListFragment mFragment1;
     private NewsListFragment mFragment2;
@@ -66,7 +65,6 @@ public class MainActivity extends BaseActivity implements
     public void initViews(ViewHolder holder, View root) {
         EventBus.getDefault().register(this);
         mCache = new DataCache(this);
-        mConfig = Config.getSingleInstance();
         initMenu(holder);
         initViewPager(holder);
     }
@@ -125,9 +123,6 @@ public class MainActivity extends BaseActivity implements
 
             }
         });
-
-        mCurrentPosition = mConfig.getMainViewPagerPosition();
-        viewPager.setCurrentItem(mCurrentPosition);
 
         tabLayout.setupWithViewPager(viewPager);
     }
@@ -332,7 +327,6 @@ public class MainActivity extends BaseActivity implements
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        mConfig.saveMainViewPagerPosition(mCurrentPosition);
     }
 
     @Override

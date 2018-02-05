@@ -37,11 +37,8 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
         List<Object> news = mDataCache.getNewsListObj();
         if (news != null && news.size() > 0) {
             Logger.d(TAG, "news : " + news.size());
-            pageIndex = mConfig.getNewsListPageIndex();
             adapter.addDatas(news);
             if (isFirstLaunch) {
-                int lastPosition = mConfig.getNewsListLastPosition();
-                mRecyclerView.getLayoutManager().scrollToPosition(lastPosition);
                 isFirstAddFooter = false;
                 isFirstLaunch = false;
             }
@@ -75,18 +72,5 @@ public class NewsListFragment extends SimpleRefreshRecyclerFragment<New, GetNews
         super.onLoadMore(event, adapter);
         mDataCache.saveNewsListObj(adapter.getDatas());
         Logger.d(TAG, "onLoadMore");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-        // 存储 PageIndex
-        mConfig.saveNewsListPageIndex(pageIndex);
-
-        // 存储 RecyclerView 滚动位置
-        View view = mRecyclerView.getLayoutManager().getChildAt(0);
-        int lastPosition = mRecyclerView.getLayoutManager().getPosition(view);
-        mConfig.saveNewsListScroll(lastPosition);
     }
 }

@@ -34,11 +34,8 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
         List<Object> topics = mDataCache.getTopicsListObj();
         if (topics != null && topics.size() > 0) {
             Logger.d(TAG, "topics : " + topics.size());
-            pageIndex = mConfig.getTopicListPageIndex();
             adapter.addDatas(topics);
             if (isFirstLaunch) {
-                int lastPosition = mConfig.getTopicListLastPosition();
-                mRecyclerView.getLayoutManager().scrollToPosition(lastPosition);
                 isFirstAddFooter = false;
                 isFirstLaunch = false;
             }
@@ -71,18 +68,5 @@ public class TopicListFragment extends SimpleRefreshRecyclerFragment<Topic, GetT
         super.onLoadMore(event, adapter);
         mDataCache.saveTopicsListObj(adapter.getDatas());
         Logger.d(TAG, "onLoadMore");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-        // 存储PageIndex
-        mConfig.saveTopicListPageIndex(pageIndex);
-
-        // 存储 RecyclerView 滚动位置
-        View view = mRecyclerView.getLayoutManager().getChildAt(0);
-        int lastPosition = mRecyclerView.getLayoutManager().getPosition(view);
-        mConfig.saveTopicListState(lastPosition, 0);
     }
 }
