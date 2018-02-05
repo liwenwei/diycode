@@ -100,9 +100,9 @@
             android:launchMode="singleTop" />
         <activity android:name=".activity.NodeListActivity" />
         <activity
+            tools:replace="android:taskAffinity"
             android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"
             android:enabled="false"
-            android:icon="@drawable/leak_canary_icon"
             android:taskAffinity="com.squareup.leakcanary">
             <intent-filter tools:node="remove">
                 <action android:name="android.intent.action.MAIN" />
