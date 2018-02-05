@@ -36,4 +36,5 @@ ext {
     libraryVersion = "1.0.2"
     supportVersion = "25.1.0"
     mockitoVersion = "2.+"
+    androidSupportLibVersion = "25.3.1"
 }
