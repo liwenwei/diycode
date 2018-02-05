@@ -11,7 +11,7 @@ import com.example.wenwei.diycode_sdk.api.notifications.event.DeleteNotification
 import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationUnReadCountEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.GetNotificationsListEvent;
 import com.example.wenwei.diycode_sdk.api.notifications.event.MarkNotificationAsReadEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class NotificationsImpl extends BaseImpl<NotificationsService> implements NotificationsAPI {
 

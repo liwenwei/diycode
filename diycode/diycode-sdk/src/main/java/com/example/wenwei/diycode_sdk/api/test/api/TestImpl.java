@@ -29,7 +29,7 @@ import android.support.annotation.Nullable;
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
 import com.example.wenwei.diycode_sdk.api.test.Event.HelloEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class TestImpl extends BaseImpl<TestService> implements TestAPI {
     public TestImpl(@NonNull Context context) {

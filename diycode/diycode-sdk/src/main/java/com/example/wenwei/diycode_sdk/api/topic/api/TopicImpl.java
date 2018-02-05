@@ -43,7 +43,7 @@ import com.example.wenwei.diycode_sdk.api.topic.event.UnWatchTopicEvent;
 import com.example.wenwei.diycode_sdk.api.topic.event.UpdateTopicEvent;
 import com.example.wenwei.diycode_sdk.api.topic.event.UpdateTopicReplyEvent;
 import com.example.wenwei.diycode_sdk.api.topic.event.WatchTopicEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class TopicImpl extends BaseImpl<TopicService> implements TopicAPI {
 

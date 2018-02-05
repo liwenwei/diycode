@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion project.sdk
     buildToolsVersion project.buildTools
-
     defaultConfig {
         applicationId "com.example.wenwei.diycode"
         minSdkVersion project.minSdk
@@ -33,9 +32,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.github.gcssloop:ViewSupport:v1.3.0'
     implementation 'com.bm.photoview:library:1.4.1'
-
     implementation 'com.romandanylyk:pageindicatorview:0.1.2@aar'
-    implementation 'org.jsoup:jsoup:1.11.2'
     implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
     implementation 'com.just.agentweb:agentweb:3.0.0'
     // Report Crash
@@ -55,5 +52,4 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
-
 }

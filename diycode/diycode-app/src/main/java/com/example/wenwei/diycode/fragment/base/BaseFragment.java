@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.wenwei.diycode.base.app.ViewHolder;
-import com.example.wenwei.diycode.utils.Config;
-import com.example.wenwei.diycode.utils.DataCache;
+import com.example.wenwei.diycode.cache.Config;
+import com.example.wenwei.diycode.cache.DataCache;
 import com.example.wenwei.diycode_sdk.api.Diycode;
 
 /**

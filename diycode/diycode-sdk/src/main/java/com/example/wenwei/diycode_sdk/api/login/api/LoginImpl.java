@@ -13,7 +13,7 @@ import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
 import com.example.wenwei.diycode_sdk.api.login.event.LogoutEvent;
 import com.example.wenwei.diycode_sdk.api.login.event.RefreshTokenEvent;
 import com.example.wenwei.diycode_sdk.api.login.event.UpdateDevicesEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 import org.greenrobot.eventbus.EventBus;
 

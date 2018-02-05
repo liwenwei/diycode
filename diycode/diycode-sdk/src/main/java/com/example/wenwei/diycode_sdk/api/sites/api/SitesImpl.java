@@ -28,7 +28,7 @@ import android.support.annotation.NonNull;
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
 import com.example.wenwei.diycode_sdk.api.sites.event.GetSitesEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class SitesImpl extends BaseImpl<SitesService> implements SitesAPI {
     public SitesImpl(@NonNull Context context) {

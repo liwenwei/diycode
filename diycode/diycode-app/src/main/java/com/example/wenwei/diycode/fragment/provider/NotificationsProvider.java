@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.TopicContentActivity;
 import com.example.wenwei.diycode.activity.UserActivity;
-import com.example.wenwei.diycode.utils.HtmlParser;
+import com.example.wenwei.utils.HtmlParser;
 import com.example.wenwei.diycode.utils.ImageUtil;
 import com.example.wenwei.diycode_sdk.api.notifications.bean.Notification;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;

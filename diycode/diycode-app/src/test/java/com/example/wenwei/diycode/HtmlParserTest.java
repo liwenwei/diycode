@@ -1,6 +1,6 @@
 package com.example.wenwei.diycode;
 
-import com.example.wenwei.diycode.utils.HtmlParser;
+import com.example.wenwei.utils.HtmlParser;
 
 import org.junit.Test;
 

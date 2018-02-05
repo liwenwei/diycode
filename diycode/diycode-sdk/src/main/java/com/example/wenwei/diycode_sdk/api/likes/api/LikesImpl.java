@@ -9,7 +9,7 @@ import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
 import com.example.wenwei.diycode_sdk.api.likes.event.LikeEvent;
 import com.example.wenwei.diycode_sdk.api.likes.event.UnLikeEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class LikesImpl extends BaseImpl<LikesService> implements LikesAPI {
 

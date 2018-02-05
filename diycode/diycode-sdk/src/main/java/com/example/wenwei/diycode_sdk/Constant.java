@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode_sdk.utils;
+package com.example.wenwei.diycode_sdk;
 
 public class Constant {
     // 网络相关

@@ -7,7 +7,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.wenwei.diycode.activity.WebActivity;
-import com.example.wenwei.diycode.utils.customtabs.CustomTabsHelper;
+import com.example.wenwei.diycode.customtabs.CustomTabsHelper;
+import com.example.wenwei.utils.AppUtil;
 
 
 public class IntentUtil {

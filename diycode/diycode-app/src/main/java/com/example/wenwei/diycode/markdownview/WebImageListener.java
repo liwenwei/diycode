@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.webkit.JavascriptInterface;
 
 import com.example.wenwei.diycode.base.app.BaseImageActivity;
-import com.example.wenwei.diycode.utils.UrlUtil;
+import com.example.wenwei.utils.UrlUtil;
 import com.example.wenwei.diycode_sdk.log.Logger;
 
 import java.util.ArrayList;

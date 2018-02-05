@@ -1,11 +1,11 @@
-package com.example.wenwei.diycode.utils;
+package com.example.wenwei.diycode.cache;
 
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.LruCache;
 
-import com.example.wenwei.diycode_sdk.utils.ACache;
+import com.example.wenwei.utils.ACache;
 
 import java.io.Serializable;
 

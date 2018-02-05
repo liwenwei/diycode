@@ -1,9 +1,10 @@
-package com.example.wenwei.diycode_sdk.utils;
+package com.example.wenwei.diycode_sdk.cache;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
+import com.example.wenwei.utils.ACache;
 
 /**
  * 缓存工具类，用于缓存各类数据

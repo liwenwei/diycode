@@ -76,7 +76,7 @@ import com.example.wenwei.diycode_sdk.api.user.event.UnBlockUserEvent;
 import com.example.wenwei.diycode_sdk.api.user.event.UnFollowUserEvent;
 import com.example.wenwei.diycode_sdk.log.Config;
 import com.example.wenwei.diycode_sdk.log.Logger;
-import com.example.wenwei.diycode_sdk.utils.DebugUtil;
+import com.example.wenwei.utils.DebugUtil;
 
 import java.io.File;
 import java.io.IOException;

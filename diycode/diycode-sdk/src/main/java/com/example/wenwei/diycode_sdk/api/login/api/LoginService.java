@@ -3,7 +3,7 @@ package com.example.wenwei.diycode_sdk.api.login.api;
 
 import com.example.wenwei.diycode_sdk.api.base.bean.State;
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
-import com.example.wenwei.diycode_sdk.utils.Constant;
+import com.example.wenwei.diycode_sdk.Constant;
 
 import retrofit2.Call;
 import retrofit2.http.DELETE;

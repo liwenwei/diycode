@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode.utils.customtabs;
+package com.example.wenwei.diycode.customtabs;
 
 
 import android.content.Context;

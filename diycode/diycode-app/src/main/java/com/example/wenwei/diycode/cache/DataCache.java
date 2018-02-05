@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode.utils;
+package com.example.wenwei.diycode.cache;
 
 
 import android.content.Context;
@@ -10,7 +10,9 @@ import com.example.wenwei.diycode_sdk.api.sites.bean.Sites;
 import com.example.wenwei.diycode_sdk.api.topic.bean.TopicContent;
 import com.example.wenwei.diycode_sdk.api.topic.bean.TopicReply;
 import com.example.wenwei.diycode_sdk.api.user.bean.UserDetail;
-import com.example.wenwei.diycode_sdk.utils.ACache;
+import com.example.wenwei.utils.ACache;
+import com.example.wenwei.utils.FileUtil;
+import com.example.wenwei.utils.HtmlParser;
 
 import java.io.File;
 import java.io.Serializable;

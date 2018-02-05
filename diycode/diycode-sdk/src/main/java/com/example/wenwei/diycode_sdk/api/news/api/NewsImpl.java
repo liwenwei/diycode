@@ -15,7 +15,7 @@ import com.example.wenwei.diycode_sdk.api.news.event.GetNewsNodesListEvent;
 import com.example.wenwei.diycode_sdk.api.news.event.GetNewsRepliesListEvent;
 import com.example.wenwei.diycode_sdk.api.news.event.GetNewsReplyEvent;
 import com.example.wenwei.diycode_sdk.api.news.event.UpdateNewsReplyEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class NewsImpl extends BaseImpl<NewsService> implements NewsAPI {
     public NewsImpl(@NonNull Context context) {

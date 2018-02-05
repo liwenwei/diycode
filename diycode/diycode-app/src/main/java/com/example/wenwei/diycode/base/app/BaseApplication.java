@@ -3,9 +3,9 @@ package com.example.wenwei.diycode.base.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.wenwei.diycode.utils.Config;
-import com.example.wenwei.diycode.utils.CrashHandler;
-import com.example.wenwei.diycode.utils.ProcessUtil;
+import com.example.wenwei.diycode.cache.Config;
+import com.example.wenwei.diycode.CrashHandler;
+import com.example.wenwei.utils.ProcessUtil;
 import com.example.wenwei.diycode_sdk.api.Diycode;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.crashreport.CrashReport;

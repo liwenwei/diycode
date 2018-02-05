@@ -6,9 +6,9 @@ import android.view.View;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
-import com.example.wenwei.diycode.utils.AppUtil;
-import com.example.wenwei.diycode.utils.DataCleanManager;
-import com.example.wenwei.diycode.utils.FileUtil;
+import com.example.wenwei.utils.AppUtil;
+import com.example.wenwei.diycode.cache.DataCleanManager;
+import com.example.wenwei.utils.FileUtil;
 import com.example.wenwei.diycode.utils.IntentUtil;
 
 import java.io.File;

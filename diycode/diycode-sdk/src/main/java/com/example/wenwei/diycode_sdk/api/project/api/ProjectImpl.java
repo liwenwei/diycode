@@ -34,7 +34,7 @@ import com.example.wenwei.diycode_sdk.api.project.event.GetProjectRepliesListEve
 import com.example.wenwei.diycode_sdk.api.project.event.GetProjectReplyEvent;
 import com.example.wenwei.diycode_sdk.api.project.event.GetProjectsListEvent;
 import com.example.wenwei.diycode_sdk.api.project.event.UpdateProjectReplyEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 public class ProjectImpl extends BaseImpl<ProjectService> implements ProjectAPI {
     public ProjectImpl(@NonNull Context context) {

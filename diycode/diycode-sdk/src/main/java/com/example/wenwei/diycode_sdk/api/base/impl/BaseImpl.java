@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 import com.example.wenwei.diycode_sdk.api.base.bean.OAuth;
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
 import com.example.wenwei.diycode_sdk.log.Logger;
-import com.example.wenwei.diycode_sdk.utils.CacheUtil;
-import com.example.wenwei.diycode_sdk.utils.Constant;
+import com.example.wenwei.diycode_sdk.cache.CacheUtil;
+import com.example.wenwei.diycode_sdk.Constant;
 
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;

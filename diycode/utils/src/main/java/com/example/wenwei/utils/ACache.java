@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode_sdk.utils;
+package com.example.wenwei.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

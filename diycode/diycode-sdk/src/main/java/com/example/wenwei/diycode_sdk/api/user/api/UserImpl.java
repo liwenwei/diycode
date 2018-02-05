@@ -42,7 +42,7 @@ import com.example.wenwei.diycode_sdk.api.user.event.GetUserReplyTopicListEvent;
 import com.example.wenwei.diycode_sdk.api.user.event.GetUsersListEvent;
 import com.example.wenwei.diycode_sdk.api.user.event.UnBlockUserEvent;
 import com.example.wenwei.diycode_sdk.api.user.event.UnFollowUserEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 import java.io.IOException;
 

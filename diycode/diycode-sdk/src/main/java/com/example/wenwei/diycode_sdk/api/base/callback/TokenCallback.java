@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.example.wenwei.diycode_sdk.api.base.event.BaseEvent;
 import com.example.wenwei.diycode_sdk.api.login.bean.Token;
-import com.example.wenwei.diycode_sdk.utils.CacheUtil;
+import com.example.wenwei.diycode_sdk.cache.CacheUtil;
 
 import org.greenrobot.eventbus.EventBus;
 

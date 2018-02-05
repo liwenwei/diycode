@@ -11,7 +11,7 @@ import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.activity.TopicActivity;
 import com.example.wenwei.diycode.activity.TopicContentActivity;
 import com.example.wenwei.diycode.activity.UserActivity;
-import com.example.wenwei.diycode.utils.TimeUtil;
+import com.example.wenwei.utils.TimeUtil;
 import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;
 import com.example.wenwei.recyclerview.adapter.base.RecyclerViewHolder;

@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import com.example.wenwei.diycode_sdk.api.base.callback.BaseCallback;
 import com.example.wenwei.diycode_sdk.api.base.impl.BaseImpl;
 import com.example.wenwei.diycode_sdk.api.photo.event.UploadPhotoEvent;
-import com.example.wenwei.diycode_sdk.utils.UUIDGenerator;
+import com.example.wenwei.utils.UUIDGenerator;
 
 import java.io.File;
 

@@ -16,7 +16,7 @@ import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.utils.ImageUtil;
 import com.example.wenwei.diycode.utils.RecyclerViewUtil;
-import com.example.wenwei.diycode.utils.TimeUtil;
+import com.example.wenwei.utils.TimeUtil;
 import com.example.wenwei.diycode_sdk.api.topic.bean.Topic;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;
 import com.example.wenwei.diycode_sdk.api.user.bean.UserDetail;

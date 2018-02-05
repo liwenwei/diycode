@@ -21,9 +21,9 @@ import com.example.wenwei.diycode_sdk.log.Logger;
 
 import java.io.FileInputStream;
 
-import static com.example.wenwei.diycode.utils.UrlUtil.getMimeType;
-import static com.example.wenwei.diycode.utils.UrlUtil.isGifSuffix;
-import static com.example.wenwei.diycode.utils.UrlUtil.isImageSuffix;
+import static com.example.wenwei.utils.UrlUtil.getMimeType;
+import static com.example.wenwei.utils.UrlUtil.isGifSuffix;
+import static com.example.wenwei.utils.UrlUtil.isImageSuffix;
 
 /**
  * 自定义 web client，做一些不可描述的事情

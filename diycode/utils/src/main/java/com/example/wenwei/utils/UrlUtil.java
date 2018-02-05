@@ -1,4 +1,4 @@
-package com.example.wenwei.diycode.utils;
+package com.example.wenwei.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
