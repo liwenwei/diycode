@@ -28,12 +28,12 @@ import static com.example.wenwei.diycode.utils.UrlUtil.isImageSuffix;
 /**
  * 自定义 web client，做一些不可描述的事情
  */
-public class GcsMarkdownViewClient extends WebViewClient {
+public class MarkdownViewClient extends WebViewClient {
     private static final String URL = "url";
     private Context mContext;
     private DiskImageCache mCache;
 
-    public GcsMarkdownViewClient(@NonNull Context context) {
+    public MarkdownViewClient(@NonNull Context context) {
         mContext = context;
         mCache = new DiskImageCache(context);
     }
@@ -72,15 +72,18 @@ public class GcsMarkdownViewClient extends WebViewClient {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        IntentUtil.openUrlWithinApp(mContext, view.getUrl());
+        IntentUtil.openUrlWithinApp(mContext, request.getUrl().toString());
         return true;
     }
 
     @Deprecated
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        IntentUtil.openUrlWithinApp(mContext, url);
-        return true;
+        if (!url.equals("file:///android_asset/html/preview.html")) {
+            IntentUtil.openUrlWithinApp(mContext, url);
+            return true;
+        }
+        return super.shouldOverrideUrlLoading(view, url);
     }
 
     //--- 监听加载了哪些资源 -----------------------------------------------------------------------

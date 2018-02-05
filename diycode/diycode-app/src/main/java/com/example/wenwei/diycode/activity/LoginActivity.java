@@ -1,6 +1,5 @@
 package com.example.wenwei.diycode.activity;
 
-import android.content.Intent;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.EditText;
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
+import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
 import com.example.wenwei.diycode_sdk.log.Logger;
 
@@ -88,8 +88,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 mDiycode.login(name, pwd);
                 break;
             case R.id.sign_up:
-                startActivity(new Intent(this, WebActivity.class)
-                        .putExtra(WebActivity.URL, "https://www.diycode.cc/account/sign_up"));
+                IntentUtil.openUrlWithinApp(this, "https://www.diycode.cc/account/sign_up");
                 break;
         }
     }

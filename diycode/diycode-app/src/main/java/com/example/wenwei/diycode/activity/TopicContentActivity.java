@@ -17,7 +17,7 @@ import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.adapter.TopicReplyAdapter;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
-import com.example.wenwei.diycode.markdownview.GcsMarkdownViewClient;
+import com.example.wenwei.diycode.markdownview.MarkdownViewClient;
 import com.example.wenwei.diycode.markdownview.MarkdownView;
 import com.example.wenwei.diycode.markdownview.WebImageListener;
 import com.example.wenwei.diycode.utils.DataCache;
@@ -116,7 +116,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
         WebImageListener listener = new WebImageListener(this, ImageActivity.class);
         mMarkdownView.addJavascriptInterface(listener, "listener");
-        GcsMarkdownViewClient webViewClient = new GcsMarkdownViewClient(this);
+        MarkdownViewClient webViewClient = new MarkdownViewClient(this);
         mMarkdownView.setWebViewClient(webViewClient);
     }
 
