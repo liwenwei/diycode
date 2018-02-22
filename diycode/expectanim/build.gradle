@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion project.sdk
-    buildToolsVersion project.buildTools
+    compileSdkVersion versions.sdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion project.minSdk
-        targetSdkVersion project.sdk
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.sdk
         versionCode 1
         versionName "1.0"
     }
@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:' + project.supportVersion
+    compile "com.android.support:appcompat-v7:${versions.supportVersion}"
 }
 
 ext {
@@ -36,7 +36,7 @@ ext {
     siteUrl = 'https://github.com/florent37/ExpectAnim'
     gitUrl = 'https://github.com/florent37/ExpectAnim.git'
 
-    libraryVersion = rootProject.ext.libraryVersion
+    libraryVersion = versions.libraryVersion
 
     developerId = 'florent37'
     developerName = 'Florent Champigny'

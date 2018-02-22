@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion project.sdk
-    buildToolsVersion project.buildTools
+    compileSdkVersion versions.sdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion project.minSdk
-        targetSdkVersion project.sdk
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.sdk
         versionCode 1
         versionName "1.0"
 
@@ -27,13 +27,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:' + rootProject.androidSupportLibVersion
-    compile 'com.android.support:recyclerview-v7:' + rootProject.androidSupportLibVersion
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    compile "com.android.support:appcompat-v7:${versions.androidSupportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${versions.androidSupportLibVersion}"
+    androidTestCompile("com.android.support.test.espresso:espresso-core:${versions.espresso}", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    testCompile 'junit:junit:4.12'
+    testCompile "junit:junit:${versions.junit}"
 
 
 }
