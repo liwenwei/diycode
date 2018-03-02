@@ -7,7 +7,7 @@ import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.utils.AppUtil;
-import com.example.wenwei.diycode.cache.DataCleanManager;
+import com.example.wenwei.diycode.data.cache.DataCleanManager;
 import com.example.wenwei.utils.FileUtil;
 import com.example.wenwei.diycode.utils.IntentUtil;
 

@@ -1,15 +1,19 @@
 package com.example.wenwei.diycode.activity;
 
 import android.graphics.Rect;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.example.wenwei.diycode.R;
 import com.example.wenwei.diycode.base.app.BaseActivity;
 import com.example.wenwei.diycode.base.app.ViewHolder;
+import com.example.wenwei.diycode.data.prefs.LoginPrefs;
 import com.example.wenwei.diycode.utils.IntentUtil;
+import com.example.wenwei.diycode.widget.PasswordEntry;
 import com.example.wenwei.diycode_sdk.api.login.event.LoginEvent;
 import com.example.wenwei.diycode_sdk.log.Logger;
 
@@ -19,7 +23,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     EditText mUsername;
-    EditText mPassword;
+    PasswordEntry mPassword;
 
     @Override
     protected int getLayoutId() {
@@ -41,6 +45,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             toastShort("登录成功");
             mDiycode.getMe();   // 获取个人信息，交给 MainActivity 处理
             finish();
+            saveLogin();
         } else {
             String msg = "请重试";
             switch (event.getCode()) {
@@ -61,6 +66,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         super.onStart();
         registerKeyboardListener();
         EventBus.getDefault().register(this);
+        loadLogin();
     }
 
     @Override
@@ -124,5 +130,23 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         DisplayMetrics metrics = rootView.getResources().getDisplayMetrics();
         int heightDiff = rootView.getBottom() - r.bottom;
         return heightDiff > softKeyboardHeight * metrics.density;
+    }
+
+    private void loadLogin() {
+        String userName = LoginPrefs.get(this).getUserName();
+        mUsername.setText(userName);
+        String password = LoginPrefs.get(this).getPassword();
+        mPassword.setText(password);
+    }
+
+    private void saveLogin() {
+        String userName = mUsername.getText().toString();
+        if (!TextUtils.isEmpty(userName)) {
+            LoginPrefs.get(this).setUserName(userName);
+        }
+        String password = mPassword.getText().toString();
+        if (!TextUtils.isEmpty(userName)) {
+            LoginPrefs.get(this).setPassword(password);
+        }
     }
 }

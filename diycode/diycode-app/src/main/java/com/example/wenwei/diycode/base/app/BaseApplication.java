@@ -3,7 +3,7 @@ package com.example.wenwei.diycode.base.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.wenwei.diycode.cache.Config;
+import com.example.wenwei.diycode.data.cache.Config;
 import com.example.wenwei.diycode.CrashHandler;
 import com.example.wenwei.utils.ProcessUtil;
 import com.example.wenwei.diycode_sdk.api.Diycode;

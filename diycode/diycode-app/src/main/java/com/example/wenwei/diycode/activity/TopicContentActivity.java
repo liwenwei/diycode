@@ -20,7 +20,7 @@ import com.example.wenwei.diycode.base.app.ViewHolder;
 import com.example.wenwei.diycode.markdownview.MarkdownViewClient;
 import com.example.wenwei.diycode.markdownview.MarkdownView;
 import com.example.wenwei.diycode.markdownview.WebImageListener;
-import com.example.wenwei.diycode.cache.DataCache;
+import com.example.wenwei.diycode.data.cache.DataCache;
 import com.example.wenwei.diycode.utils.IntentUtil;
 import com.example.wenwei.utils.NetUtil;
 import com.example.wenwei.diycode.utils.RecyclerViewUtil;
