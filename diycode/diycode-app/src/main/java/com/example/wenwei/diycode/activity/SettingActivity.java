@@ -25,7 +25,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         setTitle("设置");
         showCacheSize(holder);
 
-        String versionName = AppUtil.getVersionName(this);
+        String versionName = AppUtil.getVersionName(mContext);
         holder.setText(R.id.app_version, versionName);
 
         if (mDiycode.isLogin()) {
@@ -40,7 +40,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     // 显示缓存大小
     private void showCacheSize(ViewHolder holder) {
         try {
-            File cacheDir = new File(FileUtil.getExternalCacheDir(this));
+            File cacheDir = new File(FileUtil.getExternalCacheDir(mContext));
             String cacheSize = DataCleanManager.getCacheSize(cacheDir);
             if (!cacheSize.isEmpty()) {
                 holder.setText(R.id.cache_size, cacheSize);
@@ -60,7 +60,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 toastShort("退出成功");
                 break;
             case R.id.clear_cache:
-                DataCleanManager.deleteFolderFile(FileUtil.getExternalCacheDir(this), false);
+                DataCleanManager.deleteFolderFile(FileUtil.getExternalCacheDir(mContext), false);
                 showCacheSize(getViewHolder());
                 toastShort("清除缓存成功");
                 break;
@@ -68,7 +68,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 openActivity(AboutActivity.class);
                 break;
             case R.id.contribute:
-                IntentUtil.openAlipay(this);
+                IntentUtil.openAlipay(mContext);
                 break;
         }
     }

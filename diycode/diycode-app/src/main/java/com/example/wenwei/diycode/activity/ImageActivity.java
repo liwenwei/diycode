@@ -34,7 +34,7 @@ public class ImageActivity extends BaseImageActivity {
     @Override
     protected void initViews(ViewHolder holder, View root) {
         setTitle("查看图片");
-        mCache = new DiskImageCache(this);
+        mCache = new DiskImageCache(mContext);
         if (mCurrentMode == MODE_ERROR) {
             // TODO: 显示错误视图
             return;
@@ -84,7 +84,7 @@ public class ImageActivity extends BaseImageActivity {
     }
 
     public void loadImage(String url, PhotoView photoView) {
-        Glide.with(this)
+        Glide.with(mContext)
                 .load(url)
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(photoView);

@@ -81,7 +81,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initRecyclerView(ViewHolder holder) {
-        mAdapter = new SingleTypeAdapter<Topic>(this, R.layout.item_topic) {
+        mAdapter = new SingleTypeAdapter<Topic>(mContext, R.layout.item_topic) {
             /**
              * 在此处处理数据
              *
@@ -114,7 +114,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         };
 
         RecyclerView recyclerView = holder.get(recycler_view);
-        RecyclerViewUtil.init(this, recyclerView, mAdapter);
+        RecyclerViewUtil.init(mContext, recyclerView, mAdapter);
     }
 
     private void initScrollAnimation(ViewHolder holder) {
@@ -138,7 +138,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
                 )
                 .expect(background)
                 .toBe(
-                        height(DensityUtils.dip2px(this, 60)).withGravity(Gravity.START, Gravity.TOP)
+                        height(DensityUtils.dip2px(mContext, 60)).withGravity(Gravity.START, Gravity.TOP)
                 )
                 .toAnimation();
 
@@ -202,7 +202,7 @@ public class UserActivity extends BaseActivity implements View.OnClickListener {
         setTitle(login);
         if (null != holder) {
             holder.setText(R.id.username, name);
-            holder.loadImage(this, avatar_url, R.id.avatar);
+            holder.loadImage(mContext, avatar_url, R.id.avatar);
         }
     }
 }

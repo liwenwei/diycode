@@ -94,29 +94,29 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
     @Override
     protected void initViews(ViewHolder holder, View root) {
         setTitle("话题");
-        mDataCache = new DataCache(this);
+        mDataCache = new DataCache(mContext);
         initRecyclerView(holder);
         initMarkdownView(holder);
         loadData(holder);
     }
 
     private void initRecyclerView(ViewHolder holder) {
-        mAdapter = new TopicReplyAdapter(this);
+        mAdapter = new TopicReplyAdapter(mContext);
         RecyclerView recyclerView = holder.get(R.id.reply_list);
-        RecyclerViewUtil.init(this, recyclerView, mAdapter);
+        RecyclerViewUtil.init(mContext, recyclerView, mAdapter);
     }
 
     private void initMarkdownView(ViewHolder holder) {
         // 找到显示文章内容的webview container
         FrameLayout layout = holder.get(R.id.webview_container);
-        mMarkdownView = new MarkdownView(this.getApplicationContext());
+        mMarkdownView = new MarkdownView(mContext.getApplicationContext());
         mMarkdownView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT));
         layout.addView(mMarkdownView);
 
-        WebImageListener listener = new WebImageListener(this, ImageActivity.class);
+        WebImageListener listener = new WebImageListener(mContext, ImageActivity.class);
         mMarkdownView.addJavascriptInterface(listener, "listener");
-        MarkdownViewClient webViewClient = new MarkdownViewClient(this);
+        MarkdownViewClient webViewClient = new MarkdownViewClient(mContext);
         mMarkdownView.setWebViewClient(webViewClient);
     }
 
@@ -171,7 +171,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         TopicContent topicContent = mDataCache.getTopicContent(topic.getId());
         if (null != topicContent) {
             Logger.i("数据不变 - 来自缓存");
-            mMarkdownView.setMarkDownText(this, topicContent.getBody());
+            mMarkdownView.setMarkDownText(mContext, topicContent.getBody());
         } else {
             mDiycode.getTopic(topic.getId());
         }
@@ -187,7 +187,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
 
     // 是否需重新加载 topic 详情
     private boolean shouldReloadTopic(@NonNull Topic topic) {
-        if (!NetUtil.isNetConnection(this)) {
+        if (!NetUtil.isNetConnection(mContext)) {
             return false;   // 无网络，无法加载
         }
         if (null == mDataCache.getTopicContent(topic.getId())) {
@@ -212,7 +212,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         holder.setText(R.id.time, TimeUtil.computePastTime(topic.getUpdated_at()));
         holder.setText(R.id.title, topic.getTitle());
         holder.setText(R.id.reply_count, "共收到 " + topic.getReplies_count() + "条回复");
-        holder.loadImage(this, user.getAvatar_url(), R.id.avatar);
+        holder.loadImage(mContext, user.getAvatar_url(), R.id.avatar);
         holder.setOnClickListener(this, R.id.avatar, R.id.username);
     }
 
@@ -228,7 +228,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         holder.setText(R.id.time, TimeUtil.computePastTime(topic.getUpdated_at()));
         holder.setText(R.id.title, topic.getTitle());
         holder.setText(R.id.reply_count, "共收到 " + topic.getReplies_count() + "条回复");
-        holder.loadImage(this, user.getAvatar_url(), R.id.avatar);
+        holder.loadImage(mContext, user.getAvatar_url(), R.id.avatar);
         holder.setOnClickListener(this, R.id.avatar, R.id.username);
     }
 
@@ -239,7 +239,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
      */
     private void showAll(TopicContent topic) {
         showPreview(topic);
-        mMarkdownView.setMarkDownText(this, topic.getBody());
+        mMarkdownView.setMarkDownText(mContext, topic.getBody());
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -360,7 +360,7 @@ public class TopicContentActivity extends BaseActivity implements View.OnClickLi
         switch (item.getItemId()) {
             case R.id.action_share:
                 String mUrl = "https://www.diycode.cc/topics/" + topic.getId();
-                IntentUtil.shareUrl(this, topic.getTitle(), mUrl);
+                IntentUtil.shareUrl(mContext, topic.getTitle(), mUrl);
                 break;
         }
         return super.onOptionsItemSelected(item);

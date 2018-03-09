@@ -60,12 +60,12 @@ public class WebActivity extends BaseActivity implements View.OnClickListener {
                 finish();
                 return true;
             case R.id.action_share:
-                IntentUtil.shareUrl(this, mAgentWeb.getWebCreator().get().getTitle(),
+                IntentUtil.shareUrl(mContext, mAgentWeb.getWebCreator().get().getTitle(),
                         mAgentWeb.getWebCreator().get().getUrl());
                 return true;
             case R.id.action_browser:
                 if (mAgentWeb != null)
-                    IntentUtil.openUrl(this, mAgentWeb.getWebCreator().get().getUrl());
+                    IntentUtil.openUrl(mContext, mAgentWeb.getWebCreator().get().getUrl());
                 return true;
             default:
                 return false;

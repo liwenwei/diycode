@@ -27,12 +27,16 @@ public abstract class BaseActivity extends SwipeBackActivity {
     protected Diycode mDiycode;
     protected ViewHolder mViewHolder;
     protected SwipeBackLayout mSwipeBackLayout;
+    protected Context mContext;
+
     private Toast mToast;
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mContext = this;
         mDiycode = Diycode.getSingleInstance();
         mViewHolder = new ViewHolder(getLayoutInflater(), null, getLayoutId());
         setContentView(mViewHolder.getRootView());

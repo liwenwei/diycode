@@ -94,7 +94,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 mDiycode.login(name, pwd);
                 break;
             case R.id.sign_up:
-                IntentUtil.openUrlWithinApp(this, "https://www.diycode.cc/account/sign_up");
+                IntentUtil.openUrlWithinApp(mContext, "https://www.diycode.cc/account/sign_up");
                 break;
         }
     }
@@ -133,20 +133,20 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void loadLogin() {
-        String userName = LoginPrefs.get(this).getUserName();
+        String userName = LoginPrefs.get(mContext).getUserName();
         mUsername.setText(userName);
-        String password = LoginPrefs.get(this).getPassword();
+        String password = LoginPrefs.get(mContext).getPassword();
         mPassword.setText(password);
     }
 
     private void saveLogin() {
         String userName = mUsername.getText().toString();
         if (!TextUtils.isEmpty(userName)) {
-            LoginPrefs.get(this).setUserName(userName);
+            LoginPrefs.get(mContext).setUserName(userName);
         }
         String password = mPassword.getText().toString();
         if (!TextUtils.isEmpty(userName)) {
-            LoginPrefs.get(this).setPassword(password);
+            LoginPrefs.get(mContext).setPassword(password);
         }
     }
 }

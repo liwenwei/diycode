@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity implements
     @Override
     public void initViews(ViewHolder holder, View root) {
         EventBus.getDefault().register(this);
-        mCache = new DataCache(this);
+        mCache = new DataCache(mContext);
         initMenu(holder);
         initViewPager(holder);
     }
@@ -180,7 +180,7 @@ public class MainActivity extends BaseActivity implements
         navigation.setNavigationItemSelectedListener(this);
 
         // 双击返回顶部
-        final GestureDetector detector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {
+        final GestureDetector detector = new GestureDetector(mContext, new GestureDetector.SimpleOnGestureListener() {
             @Override
             public boolean onDoubleTap(MotionEvent e) {
                 quickToTop();               // 快速返回头部
@@ -304,13 +304,13 @@ public class MainActivity extends BaseActivity implements
                 openActivity(LoginActivity.class);
                 return true;
             }
-            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_TOPIC, me.getLogin());
+            MyTopicActivity.newInstance(mContext, MyTopicActivity.InfoType.MY_TOPIC, me.getLogin());
         } else if (id == R.id.nav_collect) {
             if (!mDiycode.isLogin()) {
                 openActivity(LoginActivity.class);
                 return true;
             }
-            MyTopicActivity.newInstance(this, MyTopicActivity.InfoType.MY_COLLECT, me.getLogin());
+            MyTopicActivity.newInstance(mContext, MyTopicActivity.InfoType.MY_COLLECT, me.getLogin());
         } else if (id == R.id.nav_about) {
             openActivity(AboutActivity.class);
         } else if (id == R.id.nav_setting) {

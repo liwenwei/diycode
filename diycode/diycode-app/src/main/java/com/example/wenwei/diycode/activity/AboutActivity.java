@@ -25,13 +25,13 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.feed_back:
-                IntentUtil.openUrl(this,"https://github.com/GcsSloop/diycode/issues/1");
+                IntentUtil.openUrl(mContext,"https://github.com/GcsSloop/diycode/issues/1");
                 break;
             case R.id.github:
-                IntentUtil.openUrl(this,"https://github.com/GcsSloop");
+                IntentUtil.openUrl(mContext,"https://github.com/GcsSloop");
                 break;
             case R.id.contribute:
-                IntentUtil.openAlipay(this);
+                IntentUtil.openAlipay(mContext);
                 break;
         }
     }
