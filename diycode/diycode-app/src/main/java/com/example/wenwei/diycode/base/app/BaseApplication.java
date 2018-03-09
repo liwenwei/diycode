@@ -31,6 +31,8 @@ public class BaseApplication extends Application {
         Config.init(this);
     }
 
+
+
     /**
      * 如果App使用了多进程且各个进程都会初始化Bugly（例如在Application类onCreate()中初始化Bugly），
      * 那么每个进程下的Bugly都会进行数据上报，造成不必要的资源浪费。

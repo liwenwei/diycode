@@ -10,8 +10,8 @@ public class LoginPrefs {
 
     private static final String LOGIN_PREF = "LOGIN_PREF";
 
-    public static final String KEY_USER_NAME = "KEY_USER_NAME";
-    public static final String KEY_PASSWORD = "KEY_PASSWORD";
+    private static final String KEY_USER_NAME = "KEY_USER_NAME";
+    private static final String KEY_PASSWORD = "KEY_PASSWORD";
 
     private static volatile LoginPrefs singleton;
     private final ObscuredSharedPreferences prefs;
@@ -26,7 +26,7 @@ public class LoginPrefs {
     }
 
     private LoginPrefs(Context context) {
-        prefs = new ObscuredSharedPreferences(context, LOGIN_PREF, context.MODE_PRIVATE);
+        prefs = new ObscuredSharedPreferences(context, LOGIN_PREF, Context.MODE_PRIVATE);
     }
 
     public void setUserName(String userName) {
