@@ -28,6 +28,7 @@ import com.example.wenwei.diycode.fragment.SitesListFragment;
 import com.example.wenwei.diycode.fragment.TopicListFragment;
 import com.example.wenwei.diycode.test.TextFragment;
 import com.example.wenwei.diycode.data.cache.DataCache;
+import com.example.wenwei.diycode.utils.DBManager;
 import com.example.wenwei.diycode_sdk.api.login.event.LogoutEvent;
 import com.example.wenwei.diycode_sdk.api.user.bean.User;
 import com.example.wenwei.diycode_sdk.api.user.bean.UserDetail;
@@ -53,6 +54,10 @@ public class MainActivity extends BaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setEnableSwipeGesture(false);
+
+        DBManager dbManager = new DBManager(this);
+        dbManager.open();
+        dbManager.close();
     }
 
     @Override
